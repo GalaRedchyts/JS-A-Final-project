@@ -1,0 +1,21 @@
+@import "reset";
+@import "mixins";
+@import "variables";
+@import "menu";
+
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: toRem($fs-16);
+  line-height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.container {
+  max-width: toRem(1140);
+  padding: toRem(20);
+}
