@@ -1,7 +1,7 @@
 "use strict";
 
 document.addEventListener('DOMContentLoaded', () => {
-  fetch('/components/menu.html')
+  fetch('../components/menu.html')
     .then(res => res.text())
     .then(data => {
       const parser = new DOMParser();
