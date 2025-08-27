@@ -14,7 +14,7 @@ async function loadComponent(selector, relativePath) {
   }
 }
 
-loadComponent('[data-header]', '/components/menu.html');
+loadComponent('[data-header]', 'components/menu.html');
 
   
   
