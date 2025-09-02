@@ -52,7 +52,7 @@ textarea {
         }
     }
 
-    .create-new-task {
+    .content-form {
         display: flex;
         flex-direction: column;
         max-width: toRem(600);
@@ -61,5 +61,73 @@ textarea {
         justify-content: center;
         padding: toRem(24) toRem(32);
         align-items: start;
+        gap: toRem($gap-24);
+        border-radius: toRem(12);
+
+        h2 {
+            font-size: toRem($fs-24);
+            line-height: toRem($fs-24);
+        }
+
+        .create-new-task {
+            display: flex;
+            flex-direction: column;
+            gap: toRem($gap-24);
+            align-items: start;
+            width: 100%;
+
+            div {
+                width: 100%;
+
+                span {
+                    color: red;
+                }
+            }
+
+            label {
+                font-size: toRem($fs-14);
+                line-height: 150%;
+            }
+
+            input, select, textarea {
+                padding: toRem(13) toRem(8);
+                border: 1px solid $borderTasks;
+                border-radius: toRem(8);
+                margin-top: toRem($p-8);
+
+                &:hover {
+                    border: 1px solid #9CA3AF;
+
+                }
+            }
+
+            .form-field{
+                display: flex;
+                flex-direction: column;
+
+                select {
+                    appearance: none;
+                    background-image: url("/images/icons/chevron-down.svg");
+                    background-repeat: no-repeat;
+                    background-position: right toRem(12) center;
+                    background-size: toRem(16);
+                    color: $mainColor;
+                }
+            }
+        }
+
+        button {
+            padding: toRem(8) toRem(24);
+            color: #FFFFFF;
+            background-color: $btnBg2;
+            border-radius: toRem(8);
+            font-weight: 600;
+            line-height: toRem(24);
+            transition: background-color 0.3s ease;
+
+            &:hover {
+                background-color: $btnHoverBg2;
+            }
+        }
     }
 }

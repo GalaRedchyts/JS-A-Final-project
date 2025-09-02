@@ -76,7 +76,6 @@ textarea {
 
 header {
   max-width: 15rem;
-  height: 100vh;
   background-color: #F9FAFB;
   width: 100%;
 }
@@ -193,7 +192,7 @@ textarea {
   margin-right: 0.25rem;
   background: url("/images/icons/arrow-left.svg") no-repeat center/contain;
 }
-.content .create-new-task {
+.content .content-form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -211,6 +210,77 @@ textarea {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: start;
+  gap: 1.5rem;
+  border-radius: 0.75rem;
+}
+.content .content-form h2 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+.content .content-form .create-new-task {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  width: 100%;
+}
+.content .content-form .create-new-task div {
+  width: 100%;
+}
+.content .content-form .create-new-task div span {
+  color: red;
+}
+.content .content-form .create-new-task label {
+  font-size: 0.875rem;
+  line-height: 150%;
+}
+.content .content-form .create-new-task input, .content .content-form .create-new-task select, .content .content-form .create-new-task textarea {
+  padding: 0.8125rem 0.5rem;
+  border: 1px solid #E5E7EB;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+}
+.content .content-form .create-new-task input:hover, .content .content-form .create-new-task select:hover, .content .content-form .create-new-task textarea:hover {
+  border: 1px solid #9CA3AF;
+}
+.content .content-form .create-new-task .form-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.content .content-form .create-new-task .form-field select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("/images/icons/chevron-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  color: #374151;
+}
+.content .content-form button {
+  padding: 0.5rem 1.5rem;
+  color: #FFFFFF;
+  background-color: #2563EB;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  line-height: 1.5rem;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.content .content-form button:hover {
+  background-color: #1D4ED8;
 }
 
 body {
@@ -232,7 +302,6 @@ body {
 .container {
   background-color: #F3F4F6;
   width: 100%;
-  height: 100vh;
 }
 
 main {
