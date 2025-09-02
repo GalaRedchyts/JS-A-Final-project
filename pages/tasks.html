@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/tasks.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/icons/favicon.ico" type="image/x-icon">
+    <title>Chorely</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header data-header>
+            <nav class="nav">
+                <div class="logo-title">
+                    <img src="/images/icons/logo.svg" alt="logo Chorely" />
+                </div>
+            
+                <ul class="list-nav">
+                    <li class="item-nav">
+                        <a href="tasks.html">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                                <use xlink:href="/images/icons/svgsprit/sprite.svg#list-todo"></use>
+                            </svg>
+                            <span>Tasks</span>
+                        </a>
+                    </li>
+                    <li class="item-nav">
+                        <a href="statistics.html">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                                <use xlink:href="/images/icons/svgsprit/sprite.svg#chart-bar-big"></use>
+                            </svg>
+                            <span>Statistics</span>
+                        </a>
+                    </li>
+                    <li class="item-nav">
+                        <a href="settings.html">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                                <use xlink:href="/images/icons/svgsprit/sprite.svg#settings"></use>
+                            </svg>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="item-nav">
+                        <a href="about.html">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                                <use xlink:href="/images/icons/svgsprit/sprite.svg#presentation"></use>
+                            </svg>
+                            <span>About</span>
+                        </a>
+                    </li>
+                </ul>
+            
+                <div class="bottom-link">
+                    <a href="project-setup.html">
+                        <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                            <use xlink:href="/images/icons/svgsprit/sprite.svg#rocket"></use>
+                        </svg>
+                        <span>Project Setup</span>
+                    </a>
+                </div>
+            </nav>
+          </header>
+        <main>
+             <div class="container">
+                <div class="head">
+                    <h1>Tasks</h1>
+                    <div class="user-image">
+                        <img src="/images/user-image.webp" alt="user-image">
+                    </div>
+                </div>
+                <div class="tasks">
+                    <div class="filters-container">
+                        <form action="#" class="tasks-filters">
+                            <div class="tasks-filters_filter">
+                                <label for="filter">Filter</label>
+                                <input id="filter" name="filter" type="text" placeholder="Filter tasks...">                            
+                            </div>
+                            <div class="tasks-filters_status">
+                                <label for="status">Status</label>
+                                <select name="status" id="status">
+                                    <option value="All" selected>All</option>
+                                    <option value="To-do">To do</option>
+                                    <option value="On-hold">On hold</option>
+                                    <option value="Done">Done</option>
+                                </select>
+                            </div>
+                            <div class="tasks-filters_user">
+                                <label for="user">User</label>
+                                <select name="user" id="user">
+                                    <option value="All" selected>All</option>
+                                    <option value="Olenka">Olenka</option>
+                                    <option value="Vlad">Vlad</option>
+                                    <option value="Sofia">Sofia</option>
+                                    <option value="Roman">Roman</option>
+                                </select>
+                            </div>
+                            <div class="tasks-filters_view">
+                                <label for="view">View</label>
+                                <select name="view" id="view">
+                                    <option value="cards" selected>Cards</option>
+                                    <option value="list">List</option>
+                                </select>
+                            </div>                 
+                        </form>                            
+                        <div class="tasks-actions">
+                            <button>+ Create Task</button>
+                        </div>
+                    </div>
+
+                    <ul class="tasks-view tasks-view-cards active">
+                        <li class="card">
+                          <div class="card_name">
+                            <h4>Cook</h4>
+                            <span class="status status_done" data-status="done">Done</span>
+                          </div>
+                          <div class="card_user">
+                            <img src="/images/user-image.webp" alt="Avatar of Olenka">
+                            <h5>Olenka</h5>
+                          </div>
+                          <div class="card_priority" data-priority="high">High Priority</div>
+                          <time class="date" datetime="2025-06-18">Due: 18 Jun 2025</time>
+
+                          <div class="card_actions">
+                            <button class="action-btn done" aria-label="Mark as done">
+                              <img src="/images/icons/check.svg" alt="Done">
+                            </button>
+                            <button class="action-btn edit" aria-label="Edit task">
+                                <img src="/images/icons/edit.svg" alt="Edit">
+                            </button>
+                          </div>
+                        </li>
+                      
+                        <li class="card">
+                          <div class="card_name">
+                            <h4>Cook</h4>
+                            <span class="status status_on-hold" data-status="hold">On hold</span>
+                          </div>
+                          <div class="card_user">
+                            <img src="/images/user-image.webp" alt="Avatar of Olenka">
+                            <h5>Olenka</h5>
+                          </div>
+                          <div class="card_priority" data-priority="low">Low Priority</div>
+                          <time class="date" datetime="2025-06-18">Due: 18 Jun 2025</time>
+
+                          <div class="card_actions">
+                            <button class="action-btn done" aria-label="Mark as done">
+                              <img src="/images/icons/check.svg" alt="Done">
+                            </button>
+                            <button class="action-btn edit" aria-label="Edit task">
+                                <img src="/images/icons/edit.svg" alt="Edit">
+                            </button>
+                          </div>
+                        </li>
+                      
+                        <li class="card">
+                          <div class="card_name">
+                            <h4>Cook</h4>
+                            <span class="status status_to-do" data-status="to-do">To do</span>
+                          </div>
+                          <div class="card_user">
+                            <img src="/images/user-image.webp" alt="Avatar of Olenka">
+                            <h5>Olenka</h5>
+                          </div>
+                          <div class="card_priority" data-priority="medium">Medium Priority</div>
+                          <time class="date" datetime="2025-06-18">Due: 18 Jun 2025</time>
+
+                          <div class="card_actions">
+                            <button class="action-btn done" aria-label="Mark as done">
+                              <img src="/images/icons/check.svg" alt="Done">
+                            </button>
+                            <button class="action-btn edit" aria-label="Edit task">
+                                <img src="/images/icons/edit.svg" alt="Edit">
+                            </button>
+                          </div>
+                        </li>
+                    </ul>
+                      
+                    <ul class="tasks-view tasks-view-list">
+                        <li class="card">
+                          <div class="card_name">
+                            <span class="status status_done" data-status="done">Done</span>
+                            <h4>Cook</h4>
+                          </div> 
+                          <div class="card_priority" data-priority="high">High Priority</div>
+                          <div class="card_user">
+                            <img src="/images/user-image.webp" alt="Avatar of Olenka">
+                            <h5>Olenka</h5>
+                          </div>
+                          <time class="date" datetime="2025-06-18">Due: 18 Jun 2025</time>
+
+                          <div class="card_actions">
+                            <button class="action-btn done" aria-label="Mark as done">
+                              <img src="/images/icons/check.svg" alt="Done">
+                            </button>
+                            <button class="action-btn edit" aria-label="Edit task">
+                                <img src="/images/icons/edit.svg" alt="Edit">
+                            </button>
+                          </div>
+                        </li>
+                      
+                        <li class="card">
+                          <div class="card_name">
+                            <span class="status status_on-hold" data-status="hold">On hold</span>
+                            <h4>Cook</h4>
+                          </div>
+                          <div class="card_priority" data-priority="low">Low Priority</div>
+                          <div class="card_user">
+                            <img src="/images/user-image.webp" alt="Avatar of Olenka">
+                            <h5>Olenka</h5>
+                          </div>
+                          <time class="date" datetime="2025-06-18">Due: 18 Jun 2025</time>
+
+                          <div class="card_actions">
+                            <button class="action-btn done" aria-label="Mark as done">
+                              <img src="/images/icons/check.svg" alt="Done">
+                            </button>
+                            <button class="action-btn edit" aria-label="Edit task">
+                                <img src="/images/icons/edit.svg" alt="Edit">
+                            </button>
+                          </div>
+                        </li>
+                      
+                        <li class="card">
+                          <div class="card_name">
+                            <span class="status status_to-do" data-status="to-do">To do</span>
+                            <h4>Cook</h4>
+                          </div>
+                          <div class="card_priority" data-priority="medium">Medium Priority</div>
+                          <div class="card_user">
+                            <img src="/images/user-image.webp" alt="Avatar of Olenka">
+                            <h5>Olenka</h5>
+                          </div>
+                          <time class="date" datetime="2025-06-18">Due: 18 Jun 2025</time>
+
+                          <div class="card_actions">
+                            <button class="action-btn done" aria-label="Mark as done">
+                              <img src="/images/icons/check.svg" alt="Done">
+                            </button>
+                            <button class="action-btn edit" aria-label="Edit task">
+                                <img src="/images/icons/edit.svg" alt="Edit">
+                            </button>
+                          </div>
+                        </li>
+                    </ul>
+
+                </div>
+             </div>
+        </main> 
+    </div>
+    <script src="/scripts/tasks.js" defer></script>
+</body>
+
+</html>

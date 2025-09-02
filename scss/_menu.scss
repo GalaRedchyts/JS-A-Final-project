@@ -5,7 +5,8 @@
 header {
     max-width: toRem($w-menu);
     height: 100vh;
-    background-color: $menuBgColor;    
+    background-color: $menuBgColor;
+    width: 100%;    
 
    .nav {
         padding: toRem($p-24);
@@ -21,13 +22,23 @@ header {
             flex-direction: column;
             gap: toRem($gap-12);
             width: 100%;
-
-            .item-nav {
-                padding: toRem($p-12) toRem($p-16);
-            }
         }
         .svg-icon {
             vertical-align: middle;
+        }
+
+        .item-nav, .bottom-link {
+            padding: toRem($p-12) toRem($p-16);
+
+            &:hover, &:active {
+                background-color: $bgHoverColor;
+                color: $btnBg1;
+                border-radius: toRem($p-8);
+
+                .svg-icon {
+                    color: $btnBg1;
+                }
+            }
         }
 
         span {

@@ -2,20 +2,28 @@
 @import "mixins";
 @import "variables";
 @import "menu";
+@import "create-tasks";
 
 body {
   font-family: "Inter", sans-serif;
   font-weight: 500;
   font-size: toRem($fs-16);
   line-height: 100%;
+  color: $mainColor;
 }
 
 .wrapper {
     min-height: 100%;
     overflow: hidden;
+    display: flex;
 }
 
 .container {
-  max-width: toRem(1140);
-  padding: toRem(20);
+  background-color: $mainBgColor;
+  width: 100%;
+  height: 100vh;
+}
+
+main {
+  width: 100%;
 }

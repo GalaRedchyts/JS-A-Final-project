@@ -1,0 +1,367 @@
+@import "mixins";
+@import "variables";
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    padding: toRem(12) toRem(24);
+    align-items: center;
+    border-bottom: 1px solid $borderTasks;
+
+    h1 {
+        font-weight: 700;
+        font-size: toRem($fs-20);
+        line-height: 150%;
+    }
+    .user-image {
+        img {
+            width: toRem(40);
+            height: toRem(40);
+            object-fit: cover;
+            border-radius: toRem(20);
+        }
+    }
+}
+
+.tasks {
+    padding:toRem(32) toRem(24) toRem(0) toRem(24);
+
+    .filters-container {
+        padding-bottom: toRem(16);
+        display: flex;   
+        gap: toRem(16);
+        border-bottom: 1px solid #E5E7EB;
+        margin-bottom: toRem(40);
+            
+        .tasks-filters {
+            display: flex;
+            flex: 1 0 auto;
+            gap: toRem(16);
+
+            label {
+                font-size: toRem($fs-14);
+                line-height: 150%;
+                color: $mainColor;
+            }
+
+            [class*="tasks-filters_"] {
+                display: flex;
+                flex-direction: column;
+                gap: toRem(8);   
+                width: 100%;
+                
+                input, select {
+                    border: 1px solid $borderTasks;
+                    padding:  toRem($p-12) ;
+                    font-size: toRem($fs-14);
+                    font-weight: 400;
+                    background-color: #FFFFFF;
+                    border-radius: toRem(8);
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        border: 1px solid #9CA3AF;
+
+                    }
+                }
+
+                select {
+                    appearance: none;
+                    background-image: url("/images/icons/chevron-down.svg");
+                    background-repeat: no-repeat;
+                    background-position: right toRem(12) center;
+                    background-size: toRem(16);
+                    color: $mainColor;
+                }
+            }
+
+            .tasks-filters_filter {
+                max-width: toRem(280);
+
+                input {
+                background-image: url("/images/icons/list-filter.svg");
+                background-repeat: no-repeat;
+                background-position: toRem(12) center;
+                padding-left: toRem(35);
+                }
+
+            }
+
+            [class*="tasks-filters_"]:not(.tasks-filters_filter, .tasks-filters_user) {
+                max-width: toRem(160);
+            }
+
+            .tasks-filters_user {
+                max-width: toRem(200);
+            }
+
+
+        
+        }             
+        .tasks-actions {
+            align-content: end;
+
+            button {
+                color: $mainBgColor;
+                background-color: $btnBg1;
+                border-radius: toRem($p-8);
+                padding: toRem($p-12) toRem(20);
+                display: flex;
+                justify-content: center;
+                transition: background-color 0.3s ease;
+
+                &:hover {
+                    background-color: $btnHoverBg;
+                }
+
+                &:active {
+                    background-color: $btnActiveBg;
+                }
+            }
+        }
+    }
+
+    .tasks-view {
+        display: none;
+      
+        &.active {
+          display: flex;
+        }
+    }
+
+    .tasks-view-cards {
+        gap: toRem($gap-24);
+
+        .card {
+            max-width: toRem(260);
+            width: 100%;
+            flex-shrink: 1;
+            background-color: $menuBgColor;
+            border-radius: toRem($p-12);
+            padding: toRem($p-16);
+            display: flex;
+            flex-direction: column;
+            gap: toRem(8);
+            transition: box-shadow 0.3s ease;
+
+            &:hover{
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+                .card_actions {
+                    opacity: 1;
+                    transform: translateY(0);
+                    pointer-events: auto;
+                }
+            }
+
+            .card_actions {
+                display: flex;
+                justify-content: end;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            
+                .action-btn {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  cursor: pointer;
+                  transition: background 0.3s ease;
+                  border-radius: toRem(6);
+
+                  &.edit {
+                    &:hover {
+                        background-color: #EEF2FF;
+                    }
+                    &:active {
+                        background-color: $bgHoverColor;
+                    }
+                  }
+
+                  &.done {
+                    &:hover {
+                        background-color: $bgStatusD;
+                    }
+                    &:active {
+                        background-color: #BBF7D0;
+                    }
+                  }
+                }
+            }
+
+            div {
+                display: flex;
+
+                h4{
+                    font-weight: 600;
+                    line-height: 150%;
+                }
+            }
+
+            &_name {
+                justify-content: space-between;
+                margin-bottom: toRem(8);
+            }
+
+            &_user {
+                gap: toRem(7);
+
+                img {
+                    height: toRem(28);
+                    width: toRem(28);
+                    object-fit: cover;
+                    border-radius: toRem(20);
+                }
+
+                h5 {
+                    font-size: toRem($fs-14);
+                    align-self: center;
+                }
+            }
+        }
+    }
+
+    .tasks-view-list {
+        flex-direction: column;
+        gap: 0;
+
+        .card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: toRem(48);
+        
+            max-width: 100%;
+            padding: toRem(12) toRem(16);
+            border-radius: 0;
+            background: transparent;
+            box-shadow: none;
+        
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+      
+            &:hover {
+                background: rgba(0,0,0,0.03);
+            }
+
+            &_name {
+               flex: 2;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+      
+                h4 {
+                    font-size: toRem(14);
+                    font-weight: 500;
+                }
+      
+                .status {
+                    font-size: toRem(12);
+                    padding: toRem(4) toRem(8);
+                    border-radius: 999px;
+                } 
+            }
+
+            &_user {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                gap: toRem(8);
+        
+                img {
+                    width: toRem(24);
+                    height: toRem(24);
+                    border-radius: 50%;
+                }
+        
+                h5 {
+                    font-size: toRem(13);
+                }
+            }
+
+            &_priority {
+                flex: 1;
+                font-weight: 500;
+                text-transform: capitalize;
+            }
+
+            &_actions {
+                position: static;
+                opacity: 1;
+                transform: none;
+                pointer-events: auto;
+                display: flex;
+                gap: toRem(8);
+            }
+        }
+      
+        .date {
+          flex: 1;
+          font-size: toRem(12);
+          color: gray;
+          text-align: right;
+        }
+    }
+
+    .status {
+        padding: toRem(4) toRem(10);
+        border-radius: 10px;
+        font-size: toRem($fs-12);
+
+        &_done {
+            background-color: $bgStatusD;
+            color: $colorStatusD;
+        }
+        &_on-hold {
+            background-color: $bgStatusOH;
+            color: $colorStatusOH;
+        }
+        &_to-do {
+            background-color: $bgStatusTD;
+            color: $colorStatusTD;
+        }
+        &_in-progress {
+            background-color: $bgStatusInP;
+            color: $colorStatusInP;
+        }
+        &_canceled {
+            background-color: $bgStatusC;
+            color: $colorStatusC;
+        }
+    }
+
+    .card_priority {
+        font-size: toRem($fs-12);
+
+        &[data-priority="high"] {
+            &::before {
+                content: url("/images/icons/high-priority.svg");
+                padding-right: toRem(8);
+            }
+        }
+
+        &[data-priority="low"] {
+            &::before {
+                content: url("/images/icons/low-priority.svg");
+                padding-right: toRem(8);
+            }
+        }
+
+        &[data-priority="medium"] {
+            &::before {
+                content: url("/images/icons/medium-priority.svg");
+                padding-right: toRem(8);
+            }
+        }
+
+    }
+
+    .date {
+        color: #6B7280;
+        font-size: toRem($fs-12);
+
+        &::before {
+            content: url("/images/icons/calendar.svg");
+            padding-right: toRem(8);
+            vertical-align: middle;
+        }
+    }
+}

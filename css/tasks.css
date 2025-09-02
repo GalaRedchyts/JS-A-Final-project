@@ -1,0 +1,384 @@
+.head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #E5E7EB;
+}
+.head h1 {
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 150%;
+}
+.head .user-image img {
+  width: 2.5rem;
+  height: 2.5rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1.25rem;
+}
+
+.tasks {
+  padding: 2rem 1.5rem 0rem 1.5rem;
+}
+.tasks .filters-container {
+  padding-bottom: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
+  border-bottom: 1px solid #E5E7EB;
+  margin-bottom: 2.5rem;
+}
+.tasks .filters-container .tasks-filters {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  gap: 1rem;
+}
+.tasks .filters-container .tasks-filters label {
+  font-size: 0.875rem;
+  line-height: 150%;
+  color: #374151;
+}
+.tasks .filters-container .tasks-filters [class*=tasks-filters_] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+.tasks .filters-container .tasks-filters [class*=tasks-filters_] input, .tasks .filters-container .tasks-filters [class*=tasks-filters_] select {
+  border: 1px solid #E5E7EB;
+  padding: 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  background-color: #FFFFFF;
+  border-radius: 0.5rem;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.tasks .filters-container .tasks-filters [class*=tasks-filters_] input:hover, .tasks .filters-container .tasks-filters [class*=tasks-filters_] select:hover {
+  border: 1px solid #9CA3AF;
+}
+.tasks .filters-container .tasks-filters [class*=tasks-filters_] select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-image: url("/images/icons/chevron-down.svg");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1rem;
+  color: #374151;
+}
+.tasks .filters-container .tasks-filters .tasks-filters_filter {
+  max-width: 17.5rem;
+}
+.tasks .filters-container .tasks-filters .tasks-filters_filter input {
+  background-image: url("/images/icons/list-filter.svg");
+  background-repeat: no-repeat;
+  background-position: 0.75rem center;
+  padding-left: 2.1875rem;
+}
+.tasks .filters-container .tasks-filters [class*=tasks-filters_]:not(.tasks-filters_filter, .tasks-filters_user) {
+  max-width: 10rem;
+}
+.tasks .filters-container .tasks-filters .tasks-filters_user {
+  max-width: 12.5rem;
+}
+.tasks .filters-container .tasks-actions {
+  -ms-flex-line-pack: end;
+      align-content: end;
+}
+.tasks .filters-container .tasks-actions button {
+  color: #F3F4F6;
+  background-color: #4F46E5;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+.tasks .filters-container .tasks-actions button:hover {
+  background-color: #6366F1;
+}
+.tasks .filters-container .tasks-actions button:active {
+  background-color: #4338CA;
+}
+.tasks .tasks-view {
+  display: none;
+}
+.tasks .tasks-view.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.tasks .tasks-view-cards {
+  gap: 1.5rem;
+}
+.tasks .tasks-view-cards .card {
+  max-width: 16.25rem;
+  width: 100%;
+  -ms-flex-negative: 1;
+      flex-shrink: 1;
+  background-color: #F9FAFB;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+  -webkit-transition: -webkit-box-shadow 0.3s ease;
+  transition: -webkit-box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, -webkit-box-shadow 0.3s ease;
+}
+.tasks .tasks-view-cards .card:hover {
+  -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.tasks .tasks-view-cards .card:hover .card_actions {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+  pointer-events: auto;
+}
+.tasks .tasks-view-cards .card .card_actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  opacity: 0;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.tasks .tasks-view-cards .card .card_actions .action-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  cursor: pointer;
+  -webkit-transition: background 0.3s ease;
+  transition: background 0.3s ease;
+  border-radius: 0.375rem;
+}
+.tasks .tasks-view-cards .card .card_actions .action-btn.edit:hover {
+  background-color: #EEF2FF;
+}
+.tasks .tasks-view-cards .card .card_actions .action-btn.edit:active {
+  background-color: #E0E7FF;
+}
+.tasks .tasks-view-cards .card .card_actions .action-btn.done:hover {
+  background-color: #DCFCE7;
+}
+.tasks .tasks-view-cards .card .card_actions .action-btn.done:active {
+  background-color: #BBF7D0;
+}
+.tasks .tasks-view-cards .card div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.tasks .tasks-view-cards .card div h4 {
+  font-weight: 600;
+  line-height: 150%;
+}
+.tasks .tasks-view-cards .card_name {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+.tasks .tasks-view-cards .card_user {
+  gap: 0.4375rem;
+}
+.tasks .tasks-view-cards .card_user img {
+  height: 1.75rem;
+  width: 1.75rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 1.25rem;
+}
+.tasks .tasks-view-cards .card_user h5 {
+  font-size: 0.875rem;
+  -ms-flex-item-align: center;
+      align-self: center;
+}
+.tasks .tasks-view-list {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0;
+}
+.tasks .tasks-view-list .card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 3rem;
+  max-width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 0;
+  background: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.tasks .tasks-view-list .card:hover {
+  background: rgba(0, 0, 0, 0.03);
+}
+.tasks .tasks-view-list .card_name {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.tasks .tasks-view-list .card_name h4 {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.tasks .tasks-view-list .card_name .status {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+.tasks .tasks-view-list .card_user {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.5rem;
+}
+.tasks .tasks-view-list .card_user img {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+}
+.tasks .tasks-view-list .card_user h5 {
+  font-size: 0.8125rem;
+}
+.tasks .tasks-view-list .card_priority {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+.tasks .tasks-view-list .card_actions {
+  position: static;
+  opacity: 1;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  pointer-events: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 0.5rem;
+}
+.tasks .tasks-view-list .date {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  font-size: 0.75rem;
+  color: gray;
+  text-align: right;
+}
+.tasks .status {
+  padding: 0.25rem 0.625rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+}
+.tasks .status_done {
+  background-color: #DCFCE7;
+  color: #16A34A;
+}
+.tasks .status_on-hold {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+.tasks .status_to-do {
+  background-color: #E5E7EB;
+  color: #1F2937;
+}
+.tasks .status_in-progress {
+  background-color: #DBEAFE;
+  color: #2563EB;
+}
+.tasks .status_canceled {
+  background-color: #FEE2E2;
+  color: #DC2626;
+}
+.tasks .card_priority {
+  font-size: 0.75rem;
+}
+.tasks .card_priority[data-priority=high]::before {
+  content: url("/images/icons/high-priority.svg");
+  padding-right: 0.5rem;
+}
+.tasks .card_priority[data-priority=low]::before {
+  content: url("/images/icons/low-priority.svg");
+  padding-right: 0.5rem;
+}
+.tasks .card_priority[data-priority=medium]::before {
+  content: url("/images/icons/medium-priority.svg");
+  padding-right: 0.5rem;
+}
+.tasks .date {
+  color: #6B7280;
+  font-size: 0.75rem;
+}
+.tasks .date::before {
+  content: url("/images/icons/calendar.svg");
+  padding-right: 0.5rem;
+  vertical-align: middle;
+}
