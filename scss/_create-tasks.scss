@@ -111,7 +111,12 @@ textarea {
                     background-repeat: no-repeat;
                     background-position: right toRem(12) center;
                     background-size: toRem(16);
+                    
+                }
+
+                &__control {
                     color: $mainColor;
+                    font-size: toRem($fs-14);
                 }
             }
         }
