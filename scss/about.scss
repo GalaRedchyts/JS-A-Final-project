@@ -1,0 +1,102 @@
+@import "mixins";
+@import "variables";
+
+.content {
+    max-width: toRem(640);
+    width: 100%;
+    gap: toRem($gap-40);
+    text-align: center;
+    margin: auto;
+    padding-top: toRem(91) 0 0 0;
+
+    .head-content, .body-content {
+        display: flex;
+        flex-direction: column;
+        gap: toRem($gap-16);
+        align-items: center;
+
+        h2 {
+            font-size: toRem($fs-24);
+            font-weight: 600;
+            line-height: 130%;
+            color: #111827;
+        }
+    }
+
+    .head-content {
+        img {
+            width: toRem(134);
+        }
+
+        p {
+            font-weight: 400;
+            line-height: 150%;
+            color: $mainColor;
+        }
+    }
+
+    .body-content {
+        img {
+            max-width: toRem(180);
+            width: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .developer-name {
+            font-family: toRem(20);
+            font-weight: 700;
+            line-height: 150%;
+            color: #111827;
+
+            span {
+                margin-left: toRem($p-8);
+                font-size: toRem($fs-14);
+                font-weight: 600;
+                color: $btnBg1;
+                padding: toRem($p-8) toRem($p-12);
+                background-color: $bgStatusInP;
+            }
+        }
+
+        p {
+            font-size: toRem($fs-14);
+            font-weight: 400;
+            line-height: 150%;
+        }
+
+        .buttons {
+            display: flex;
+            gap: toRem($gap-16);
+            
+            .linkedin, .email {
+                padding: toRem($p-8) toRem($p-24);
+                font-weight: 600;
+                line-height: toRem(24);
+                border-radius: toRem(8);
+                transition: background-color 0.3s ease;
+            }
+
+            .linkedin {
+                color: #FFFF;
+                background-color: $btnBg1;
+
+                &:hover {
+                    background-color: $btnHoverBg;
+                }
+
+                &:active {
+                    background-color: $btnActiveBg;
+                }
+            }
+
+            .email {
+                background-color: $borderTasks;
+
+                &:hover {
+                    background-color: $mainBgColor;
+                }
+            }
+        }
+    }
+}
