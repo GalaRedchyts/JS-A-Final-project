@@ -17,8 +17,6 @@
         img {
             width: toRem(40);
             height: toRem(40);
-            object-fit: cover;
-            border-radius: toRem(20);
         }
     }
 }
@@ -208,8 +206,6 @@
                 img {
                     height: toRem(28);
                     width: toRem(28);
-                    object-fit: cover;
-                    border-radius: toRem(20);
                 }
 
                 h5 {
@@ -299,59 +295,6 @@
           color: gray;
           text-align: right;
         }
-    }
-
-    .status {
-        padding: toRem(4) toRem(10);
-        border-radius: 10px;
-        font-size: toRem($fs-12);
-
-        &_done {
-            background-color: $bgStatusD;
-            color: $colorStatusD;
-        }
-        &_on-hold {
-            background-color: $bgStatusOH;
-            color: $colorStatusOH;
-        }
-        &_to-do {
-            background-color: $bgStatusTD;
-            color: $colorStatusTD;
-        }
-        &_in-progress {
-            background-color: $bgStatusInP;
-            color: $colorStatusInP;
-        }
-        &_canceled {
-            background-color: $bgStatusC;
-            color: $colorStatusC;
-        }
-    }
-
-    .card_priority {
-        font-size: toRem($fs-12);
-
-        &[data-priority="high"] {
-            &::before {
-                content: url("/images/icons/high-priority.svg");
-                padding-right: toRem(8);
-            }
-        }
-
-        &[data-priority="low"] {
-            &::before {
-                content: url("/images/icons/low-priority.svg");
-                padding-right: toRem(8);
-            }
-        }
-
-        &[data-priority="medium"] {
-            &::before {
-                content: url("/images/icons/medium-priority.svg");
-                padding-right: toRem(8);
-            }
-        }
-
     }
 
     .date {

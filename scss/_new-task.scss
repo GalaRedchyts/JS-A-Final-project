@@ -1,0 +1,79 @@
+
+
+.content-new-task {
+    color: #111827;
+    h4 {
+        font-size: toRem($fs-24);
+        line-height: toRem($fs-24);
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        gap: toRem($gap-24);
+
+        .task-field {
+            span {
+                font-size: toRem($fs-14);
+                line-height: 150%;
+                color: $mainColor;
+            }
+
+            .task-value {
+                margin-top: toRem($p-8);
+                font-weight: 400;
+                line-height: 150%;
+
+                &[data-status] {
+                    border-radius: toRem(999);
+                    padding: toRem($p-8) toRem($p-14);
+                    width: fit-content;
+                }
+            }
+
+            img {
+                height: toRem(40);
+                width: toRem(40);
+            }
+
+            .task-assignee {
+                display: flex;
+                gap: toRem($gap-12);
+                align-items: center;
+
+                &__name{
+                    color:#111827;
+                }
+            }
+            .date {
+        
+                &::before {
+                    content: url("/images/icons/calendar.svg");
+                    padding-right: toRem(8);
+                    vertical-align: middle;
+                }
+            }
+ 
+        }
+    }
+}
+
+.buttons {
+    display: flex;
+    gap: toRem($gap-16);
+
+    button {
+        padding: toRem(8) toRem(24);
+        color: #FFFF;
+        background-color: $btnBg2;
+        border-radius: toRem(8);
+        line-height: toRem(24);
+        transition: background-color 0.3s ease;
+        
+        &:hover {
+            background-color: $btnHoverBg2;
+        }
+    }
+
+
+}

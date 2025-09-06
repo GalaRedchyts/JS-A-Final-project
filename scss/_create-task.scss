@@ -17,7 +17,6 @@
         img {
             width: toRem(40);
             height: toRem(40);
-            object-fit: cover;
             border-radius: toRem(20);
         }
     }
@@ -52,7 +51,7 @@ textarea {
         }
     }
 
-    .content-form {
+    .content-form, .container-task {
         display: flex;
         flex-direction: column;
         max-width: toRem(600);

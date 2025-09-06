@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const createBtn = document.querySelector(".tasks-actions button");
   createBtn.addEventListener("click", () => {
-    window.location.href = "create-tasks.html";
+    window.location.href = "create-task.html";
   });
 });
 

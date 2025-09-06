@@ -19,9 +19,6 @@
 .head .user-image img {
   width: 2.5rem;
   height: 2.5rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 1.25rem;
 }
 
 .tasks {
@@ -225,9 +222,6 @@
 .tasks .tasks-view-cards .card_user img {
   height: 1.75rem;
   width: 1.75rem;
-  -o-object-fit: cover;
-     object-fit: cover;
-  border-radius: 1.25rem;
 }
 .tasks .tasks-view-cards .card_user h5 {
   font-size: 0.875rem;
@@ -332,46 +326,6 @@
   font-size: 0.75rem;
   color: gray;
   text-align: right;
-}
-.tasks .status {
-  padding: 0.25rem 0.625rem;
-  border-radius: 10px;
-  font-size: 0.75rem;
-}
-.tasks .status_done {
-  background-color: #DCFCE7;
-  color: #16A34A;
-}
-.tasks .status_on-hold {
-  background-color: #FEF3C7;
-  color: #92400E;
-}
-.tasks .status_to-do {
-  background-color: #E5E7EB;
-  color: #1F2937;
-}
-.tasks .status_in-progress {
-  background-color: #DBEAFE;
-  color: #2563EB;
-}
-.tasks .status_canceled {
-  background-color: #FEE2E2;
-  color: #DC2626;
-}
-.tasks .card_priority {
-  font-size: 0.75rem;
-}
-.tasks .card_priority[data-priority=high]::before {
-  content: url("/images/icons/high-priority.svg");
-  padding-right: 0.5rem;
-}
-.tasks .card_priority[data-priority=low]::before {
-  content: url("/images/icons/low-priority.svg");
-  padding-right: 0.5rem;
-}
-.tasks .card_priority[data-priority=medium]::before {
-  content: url("/images/icons/medium-priority.svg");
-  padding-right: 0.5rem;
 }
 .tasks .date {
   color: #6B7280;
