@@ -97,7 +97,7 @@ header .nav {
       -ms-flex-align: center;
           align-items: center;
   width: 240;
-  border-right: 1px solid #DBEAFE;
+  border-right: 1px solid #E5E7EB;
 }
 header .nav .list-nav {
   display: -webkit-box;

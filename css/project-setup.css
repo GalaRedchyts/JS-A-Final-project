@@ -73,11 +73,11 @@
           transform: scaleX(-1);
 }
 
-[bata-project-ready] {
+[data-project-ready] {
   text-align: center;
   display: none;
 }
-[bata-project-ready] .buttons .explore-tasks {
+[data-project-ready] .buttons .explore-tasks {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -86,30 +86,30 @@
           align-items: center;
   background-color: #4F46E5;
 }
-[bata-project-ready] .buttons .explore-tasks::before {
+[data-project-ready] .buttons .explore-tasks::before {
   content: "";
   width: 1.5rem;
   height: 1.5rem;
   background: url("/images/icons/list-todo.svg") no-repeat center/contain;
   margin-right: 0.5rem;
 }
-[bata-project-ready] .buttons .explore-tasks:hover {
+[data-project-ready] .buttons .explore-tasks:hover {
   background-color: #6366F1;
 }
-[bata-project-ready] .buttons .explore-tasks:active {
+[data-project-ready] .buttons .explore-tasks:active {
   background-color: #4338CA;
 }
-[bata-project-ready] .buttons .button {
+[data-project-ready] .buttons .button {
   padding: 0.5rem 1.5rem;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
-[bata-project-ready] .buttons .clear-all-data {
+[data-project-ready] .buttons .clear-all-data {
   border: 1px solid #EF4444;
   color: #EF4444;
   background-color: #F9FAFB;
 }
-[bata-project-ready] .buttons .clear-all-data:hover {
+[data-project-ready] .buttons .clear-all-data:hover {
   color: #F9FAFB;
   background-color: #EF4444;
 }

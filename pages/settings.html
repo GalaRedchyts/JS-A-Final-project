@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/settings.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/icons/favicon.ico" type="image/x-icon">
+    <title>Chorely</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header data-header>
+            <nav class="nav">
+                <div class="logo-title">
+                    <img src="/images/icons/logo.svg" alt="logo Chorely" />
+                </div>
+
+                <ul class="list-nav">
+                    <li class="item-nav">
+                        <a href="tasks.html">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                                <use xlink:href="/images/icons/svgsprit/sprite.svg#list-todo"></use>
+                            </svg>
+                            <span>Tasks</span>
+                        </a>
+                    </li>
+                    <li class="item-nav">
+                        <a href="statistics.html">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                                <use xlink:href="/images/icons/svgsprit/sprite.svg#chart-bar-big"></use>
+                            </svg>
+                            <span>Statistics</span>
+                        </a>
+                    </li>
+                    <li class="item-nav">
+                        <a href="settings.html">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                                <use xlink:href="/images/icons/svgsprit/sprite.svg#settings"></use>
+                            </svg>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="item-nav">
+                        <a href="about.html">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                                <use xlink:href="/images/icons/svgsprit/sprite.svg#presentation"></use>
+                            </svg>
+                            <span>About</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="bottom-link">
+                    <a href="project-setup.html">
+                        <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                            <use xlink:href="/images/icons/svgsprit/sprite.svg#rocket"></use>
+                        </svg>
+                        <span>Project Setup</span>
+                    </a>
+                </div>
+            </nav>
+          </header>
+        <main>
+             <div class="container">
+                <div class="head">
+                    <h1>Settings</h1>
+                    <div class="user-image">
+                        <img src="/images/user-image.webp" alt="user-image">
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="head-content">
+                        <h2>Team Members</h2>
+                        <ul class="list-users">
+                            <li data-current-user>
+                                <img src="/images/user-image.webp" alt="user image">
+                                <h5 class="user-name" data-name>Olenka</h5>
+                                <span>Current User</span>
+                            </li>
+                            <li>
+                                <img src="/images/user-image.webp" alt="user image">
+                                <h5 class="user-name" data-name>Anna</h5>
+                                <button class="delete-button" aria-label="Delete">
+                                    <img src="/images/icons/trash.svg" alt="icon trash">
+                                </button>
+                            </li>
+                            <li>
+                                <img src="/images/user-image.webp" alt="user image">
+                                <h5 class="user-name" data-name>Vlada</h5>
+                                <button class="delete-button" aria-label="Delete">
+                                    <img src="/images/icons/trash.svg" alt="icon trash">
+                                </button>
+                            </li>
+                            <li>
+                                <img src="/images/user-image.webp" alt="user image">
+                                <h5 class="user-name" data-name>Roman</h5>
+                                <button class="delete-button" aria-label="Delete">
+                                    <img src="/images/icons/trash.svg" alt="icon trash">
+                                </button>
+                            </li>
+                            <li>
+                                <img src="/images/user-image.webp" alt="user image">
+                                <h5 class="user-name" data-name>Sofia</h5>
+                                <button class="delete-button" aria-label="Delete">
+                                    <img src="/images/icons/trash.svg" alt="icon trash">
+                                </button>
+                            </li>
+                        </ul>
+                        <div class="members">You have <span data-user-count>5</span> team members.</div>
+                    </div>
+                    <div class="add-member">
+                        <button>+ Add New Member</button>
+                    </div>
+                </div>
+             </div>
+        </main> 
+    </div>
+    <!-- <script src="/scripts/create-tasks.js" defer></script> -->
+</body>
+
+</html>

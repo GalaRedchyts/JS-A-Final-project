@@ -19,7 +19,7 @@
             font-size: toRem($fs-24);
             font-weight: 600;
             line-height: 130%;
-            color: #111827;
+            color: $font-color;
         }
     }
 
@@ -46,7 +46,7 @@
             font-family: toRem(20);
             font-weight: 700;
             line-height: 150%;
-            color: #111827;
+            color: $font-color;
 
             span {
                 margin-left: toRem($p-8);

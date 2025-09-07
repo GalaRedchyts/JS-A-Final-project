@@ -1,7 +1,7 @@
 
 
 .content-new-task {
-    color: #111827;
+    color: $font-color;
     h4 {
         font-size: toRem($fs-24);
         line-height: toRem($fs-24);
@@ -42,7 +42,7 @@
                 align-items: center;
 
                 &__name{
-                    color:#111827;
+                    color:$font-color;
                 }
             }
             .date {
