@@ -1,0 +1,118 @@
+@import "mixins";
+@import "variables";
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-weight: 600;
+    font-weight: 600;
+    line-height: 150%;
+    background-color: $menuBgColor;
+
+    .content {
+        gap: toRem($gap-48)
+    }
+
+    .title {
+        display: flex;
+        flex-direction: column;
+        gap: toRem($gap-16);
+        
+        h1 {
+            font-size: toRem($fs-40);
+            margin-bottom: toRem($m-16);
+
+            span {
+                color: $btnBg1;
+            }
+        }
+
+        p {
+            font-size: toRem($fs-24);
+            text-align: center;
+        } 
+    }
+
+    .generate-sample-project {
+        display: flex;
+        align-items: end;
+        gap: toRem($gap-48);
+
+        button {
+            padding: toRem($p-16) toRem($p-32);
+            color: $mainBgColor;
+            font-size: toRem($fs-24);
+            background-color: $btnBg1;
+            border-radius: toRem(8);
+            transition: background-color 0.3s ease;
+
+            &::before {
+                content: url("/images/icons/rocket.svg");
+                margin-right: toRem($m-8);
+                vertical-align: sub;
+            }
+
+            &:hover {
+                background-color: $btnHoverBg;
+            }
+
+            &:active {
+                background-color: $btnActiveBg;
+            }
+
+        }
+
+        .right-pointing-arrow {
+            transform: scaleX(-1);
+        }
+    }
+}
+
+
+[bata-project-ready] {
+    text-align: center;
+    display: none;
+
+    .buttons {
+
+        .explore-tasks {
+            display: flex;
+            align-items: center;
+            background-color: $btnBg1;
+
+            &::before {
+                content: "";
+                width: toRem(24);
+                height: toRem(24);
+                background: url("/images/icons/list-todo.svg") no-repeat center/contain;
+                margin-right: toRem($m-8);
+            }
+
+            &:hover {
+                background-color: $btnHoverBg;
+            }
+
+            &:active {
+                background-color: $btnActiveBg;
+            }
+        }
+
+        .button {
+            padding: toRem($p-8) toRem($p-24);
+            transition: background-color 0.3s ease;
+        }
+
+        .clear-all-data {
+            border: 1px solid #EF4444;
+            color: #EF4444;
+            background-color: $menuBgColor;
+
+            &:hover {
+                color: $menuBgColor;
+                background-color: #EF4444;
+            }
+        }
+    }
+}

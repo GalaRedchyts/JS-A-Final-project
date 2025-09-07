@@ -96,6 +96,8 @@ header .nav {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  width: 240;
+  border-right: 1px solid #DBEAFE;
 }
 header .nav .list-nav {
   display: -webkit-box;
