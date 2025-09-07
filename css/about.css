@@ -37,8 +37,6 @@
   max-width: 11.25rem;
   width: 100%;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .content .body-content .developer-name {
   font-family: 1.25rem;
