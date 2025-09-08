@@ -1,0 +1,126 @@
+@import "../styles.scss";
+@import "create-task";
+
+.content {
+    padding-top: toRem($p-32);
+    line-height: 150%;
+
+    .head-content {
+        width: 100%;
+        padding-bottom: toRem($p-24);
+        border-bottom: 1px solid $borderTasks;
+
+        .list-status-tasks {
+            display: flex;
+            gap: toRem($gap-24);
+
+            li {
+                background-color: $bgCard;
+                text-align: center;
+                padding: toRem($p-16) 0;
+                flex: 1 1 100%;
+                max-width: toRem(203); 
+
+                h6 {
+                    margin-bottom: toRem($m-8);
+                    width: 100%;
+                }
+
+                &.done h6 {
+                    color: $colorStatusD;
+                }
+
+                &.progress h6 {
+                    color: $colorStatusInP;
+                }
+
+                &.hold h6 {
+                    color: $colorStatusOH;
+                }
+
+                &.canceled h6 {
+                    color: $colorStatusC;
+                }
+
+                &.to-do h6 {
+                    color: $colorStatusTD;
+                }
+            }
+        }
+    }
+
+    .team-statistics-content {
+        width: 100%;
+
+        .members {
+            margin-bottom: toRem($m-24);
+        }
+        .team-statistics {
+            padding-bottom: toRem($p-24);
+            border-bottom: 1px solid $borderTasks;
+
+            .team {
+                display: flex;
+                align-items: center;
+                margin-bottom: toRem($m-8);
+
+                span {
+                    margin-left: toRem($m-12);
+                }
+
+                img {
+                    &:first-child {
+                    margin-left: 0;
+                    }
+                } 
+            }
+        }
+    }
+
+    .progress-bar-wrapper {
+        display: flex;
+        align-items: center;
+        gap: toRem($gap-16);
+
+        .progress-bar {
+            max-width: toRem(300);
+            width: 100%;
+            height: toRem(16);
+            background-color: $borderTasks;
+            border-radius: toRem(8);
+            overflow: hidden;
+            box-shadow: inset 0 0 toRem(2) rgba(0,0,0,0.1);
+
+            &__fill {
+                height: 100%;
+                background-color: $colorStatusInP;
+                width: 50%;
+                transition: width 0.3s ease-in-out;
+            }
+        }
+    }
+
+    img {
+        width: toRem(40);
+        height: toRem(40);
+        margin-left: toRem(-$m-8);
+    } 
+
+    .users-statistics-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: toRem($gap-24);
+        .user-content{
+
+            .user {
+                display: flex;
+                align-items: center;
+                gap: toRem($gap-12);
+                margin-bottom: toRem($m-8);
+            }
+        }
+
+    }
+}
+

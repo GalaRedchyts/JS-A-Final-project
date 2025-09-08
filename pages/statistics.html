@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/statistics.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="/images/icons/favicon.ico" type="image/x-icon">
+    <title>Chorely</title>
+</head>
+<body>
+    <div class="wrapper">
+        <header data-header>
+            <nav class="nav">
+                <div class="logo-title">
+                    <img src="/images/icons/logo.svg" alt="logo Chorely" />
+                </div>
+
+                <ul class="list-nav">
+                    <li class="item-nav">
+                        <a href="tasks.html">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                                <use xlink:href="/images/icons/svgsprit/sprite.svg#list-todo"></use>
+                            </svg>
+                            <span>Tasks</span>
+                        </a>
+                    </li>
+                    <li class="item-nav">
+                        <a href="statistics.html">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                                <use xlink:href="/images/icons/svgsprit/sprite.svg#chart-bar-big"></use>
+                            </svg>
+                            <span>Statistics</span>
+                        </a>
+                    </li>
+                    <li class="item-nav">
+                        <a href="settings.html">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                                <use xlink:href="/images/icons/svgsprit/sprite.svg#settings"></use>
+                            </svg>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                    <li class="item-nav">
+                        <a href="about.html">
+                            <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                                <use xlink:href="/images/icons/svgsprit/sprite.svg#presentation"></use>
+                            </svg>
+                            <span>About</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="bottom-link">
+                    <a href="project-setup.html">
+                        <svg class="svg-icon" viewBox="0 0 24 24" width="1.5rem" height="1.5rem" fill='none'>
+                            <use xlink:href="/images/icons/svgsprit/sprite.svg#rocket"></use>
+                        </svg>
+                        <span>Project Setup</span>
+                    </a>
+                </div>
+            </nav>
+          </header>
+        <main>
+             <div class="container">
+                <div class="head">
+                    <h1>Statistics</h1>
+                    <div class="user-image">
+                        <img src="/images/user-image.webp" alt="user-image">
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="head-content">
+                        <ul class="list-status-tasks">
+                            <li class="done">
+                                <h6>Tasks done</h6>
+                                <span data-tasks-done>12</span>
+                            </li>
+                            <li class="progress">
+                                <h6>In Progress</h6>
+                                <span data-tasks-in-progress>1</span>
+                            </li>
+                            <li class="hold">
+                                <h6>On Hold</h6>
+                                <span data-tasks-on-hold>2</span>
+                            </li>
+                            <li class="canceled">
+                                <h6>Canceled</h6>
+                                <span data-tasks-canceled>3</span>
+                            </li>
+                            <li class="to-do">
+                                <h6>To Do</h6>
+                                <span data-tasks-to-do>7</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="team-statistics-content">
+                        <div class="members">Team progress: <span data-user-count>55%</span> tasks completed.</div>
+
+                        <div class="team-statistics">
+                            <div class="team">
+                                <img src="/images/user-image.webp" alt="user image">
+                                <img src="/images/user-image.webp" alt="user image">
+                                <img src="/images/user-image.webp" alt="user image">
+                                <img src="/images/user-image.webp" alt="user image">
+                                <img src="/images/user-image.webp" alt="user image">
+                                <span>Team</span>
+                            </div>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar">
+                                    <div class="progress-bar__fill" data-progress-bar-fill></div>
+                                </div>
+                                <span class="progress-bar_percent" data-progress-bar-percent>55% (6/12)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="users-statistics-content">
+                        <div class="user-content">
+                            <div class="user">
+                                <img src="/images/user-image.webp" alt="user image">
+                                <span>Olenka</span>
+                            </div>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar">
+                                    <div class="progress-bar__fill" data-progress-bar-fill></div>
+                                </div>
+                                <span class="progress-bar_percent" data-progress-bar-percent>80% (8/10)</span>
+                            </div>
+                        </div>
+                        <div class="user-content">
+                            <div class="user">
+                                <img src="/images/user-image.webp" alt="user image">
+                                <span>Olenka</span>
+                            </div>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar">
+                                    <div class="progress-bar__fill" data-progress-bar-fill></div>
+                                </div>
+                                <span class="progress-bar_percent" data-progress-bar-percent>80% (8/10)</span>
+                            </div>
+                        </div>
+                        <div class="user-content">
+                            <div class="user">
+                                <img src="/images/user-image.webp" alt="user image">
+                                <span>Olenka</span>
+                            </div>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar">
+                                    <div class="progress-bar__fill" data-progress-bar-fill></div>
+                                </div>
+                                <span class="progress-bar_percent" data-progress-bar-percent>80% (8/10)</span>
+                            </div>
+                        </div>
+                        <div class="user-content">
+                            <div class="user">
+                                <img src="/images/user-image.webp" alt="user image">
+                                <span>Olenka</span>
+                            </div>
+                            <div class="progress-bar-wrapper">
+                                <div class="progress-bar">
+                                    <div class="progress-bar__fill" data-progress-bar-fill></div>
+                                </div>
+                                <span class="progress-bar_percent" data-progress-bar-percent>80% (8/10)</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+             </div>
+        </main> 
+    </div>
+    <!-- <script src="/scripts/create-tasks.js" defer></script> -->
+</body>
+
+</html>

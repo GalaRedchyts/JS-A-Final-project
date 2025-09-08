@@ -1,5 +1,5 @@
-@import "mixins";
-@import "variables";
+@import "../styles.scss";
+@import "create-task";
 
 .content {
     padding: toRem($p-32) toRem($p-24);

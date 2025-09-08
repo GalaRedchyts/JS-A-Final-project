@@ -565,14 +565,14 @@ textarea {
   background-color: #1D4ED8;
 }
 
-.content {
-  padding: 2rem 1.5rem;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: start;
+.content-new-task {
   color: #111827;
 }
-.content .head-content {
+.content-new-task h4 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+.content-new-task li {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -582,22 +582,28 @@ textarea {
           flex-direction: column;
   gap: 1.5rem;
 }
-.content .head-content h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
+.content-new-task li .task-field span {
+  font-size: 0.875rem;
+  line-height: 150%;
+  color: #374151;
+}
+.content-new-task li .task-field .task-value {
+  margin-top: 0.5rem;
+  font-weight: 400;
   line-height: 150%;
 }
-.content .head-content .list-users {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 1rem;
+.content-new-task li .task-field .task-value[data-status] {
+  border-radius: 62.4375rem;
+  padding: 0.5rem 0.875rem;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
-.content .head-content .list-users li {
+.content-new-task li .task-field img {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+.content-new-task li .task-field .task-assignee {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -605,48 +611,31 @@ textarea {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding-bottom: 0.5rem;
-  border-bottom: 1px solid #E5E7EB;
 }
-.content .head-content .list-users li span {
-  background-color: #DBEAFE;
-  color: #4F46E5;
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.375rem 0.75rem;
-  border-radius: 0.25rem;
+.content-new-task li .task-field .task-assignee__name {
+  color: #111827;
 }
-.content .head-content .list-users li img {
-  max-width: 2.5rem;
-  max-height: 2.5rem;
+.content-new-task li .task-field .date::before {
+  content: url("/images/icons/calendar.svg");
+  padding-right: 0.5rem;
+  vertical-align: middle;
 }
-.content .head-content .list-users li .user-name {
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+
+.buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1rem;
 }
-.content .head-content .members {
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 150%;
-}
-.content .head-content .members span {
-  font-weight: 600;
-}
-.content .add-member {
-  font-weight: 600;
-  background-color: #4F46E5;
+.buttons button {
+  padding: 0.5rem 1.5rem;
+  color: white;
+  background-color: #2563EB;
   border-radius: 0.5rem;
+  line-height: 1.5rem;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
-.content .add-member button {
-  color: #F3F4F6;
-  padding: 0.5rem 1.5rem;
-}
-.content .add-member:hover {
-  background-color: #6366F1;
-}
-.content .add-member:active {
-  background-color: #4338CA;
+.buttons button:hover {
+  background-color: #1D4ED8;
 }
