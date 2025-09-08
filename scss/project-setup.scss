@@ -20,7 +20,7 @@
         flex-direction: column;
         gap: toRem($gap-16);
         
-        h1 {
+        h1, h2 {
             font-size: toRem($fs-40);
             margin-bottom: toRem($m-16);
 
@@ -69,6 +69,10 @@
         }
     }
 }
+
+// [data-generate-sample-project] {
+//     display: none;
+// }
 
 
 [data-project-ready] {
