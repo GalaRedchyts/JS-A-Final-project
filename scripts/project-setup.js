@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const readySection = document.querySelector("[data-project-ready]");
     const generateBtn = generateSection.querySelector("button");
     const clearBtn = readySection.querySelector(".clear-all-data");
+    const exploreTasksBtn = document.querySelector(".explore-tasks");
 
     generateBtn.addEventListener("click", () => {
         const user1 = storage.addUser({ name: "Alice" });
@@ -32,5 +33,11 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
         generateSection.style.display = "flex";
         readySection.style.display = "none";
+    }
+
+    if (exploreTasksBtn) {
+        exploreTasksBtn.addEventListener("click", () => {
+            window.location.href = "pages/tasks.html";
+        });
     }
 });
