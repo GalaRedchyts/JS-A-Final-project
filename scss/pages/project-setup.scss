@@ -23,6 +23,8 @@
         h1, h2 {
             font-size: toRem($fs-40);
             margin-bottom: toRem($m-16);
+            line-height: 150%;
+            text-align: center;
 
             span {
                 color: $btnBg1;
@@ -38,7 +40,8 @@
     .generate-sample-project {
         display: flex;
         align-items: end;
-        gap: toRem($gap-48);
+        justify-content: space-between;
+        margin-bottom: toRem($m-48);
 
         button {
             padding: toRem($p-16) toRem($p-32);
@@ -68,6 +71,11 @@
             transform: scaleX(-1);
         }
     }
+
+    .img-container {
+        display: flex;
+        justify-content: center;
+    }
 }
 
 // [data-generate-sample-project] {
@@ -77,14 +85,17 @@
 
 [data-project-ready] {
     text-align: center;
-    display: none;
+    display: flex;
 
     .buttons {
+        display: flex;
+        gap: toRem($gap-48);
 
         .explore-tasks {
             display: flex;
             align-items: center;
             background-color: $btnBg1;
+            color: #FFFF;
 
             &::before {
                 content: "";
@@ -103,9 +114,10 @@
             }
         }
 
-        .button {
+        button {
             padding: toRem($p-8) toRem($p-24);
             transition: background-color 0.3s ease;
+            border-radius: toRem(8);
         }
 
         .clear-all-data {

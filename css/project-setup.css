@@ -597,6 +597,8 @@ textarea {
 .container .title h1, .container .title h2 {
   font-size: 2.5rem;
   margin-bottom: 1rem;
+  line-height: 150%;
+  text-align: center;
 }
 .container .title h1 span, .container .title h2 span {
   color: #4F46E5;
@@ -612,7 +614,10 @@ textarea {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: end;
-  gap: 3rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 3rem;
 }
 .container .generate-sample-project button {
   padding: 1rem 2rem;
@@ -639,10 +644,26 @@ textarea {
       -ms-transform: scaleX(-1);
           transform: scaleX(-1);
 }
+.container .img-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
 
 [data-project-ready] {
   text-align: center;
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+[data-project-ready] .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 3rem;
 }
 [data-project-ready] .buttons .explore-tasks {
   display: -webkit-box;
@@ -652,6 +673,7 @@ textarea {
       -ms-flex-align: center;
           align-items: center;
   background-color: #4F46E5;
+  color: white;
 }
 [data-project-ready] .buttons .explore-tasks::before {
   content: "";
@@ -666,10 +688,11 @@ textarea {
 [data-project-ready] .buttons .explore-tasks:active {
   background-color: #4338CA;
 }
-[data-project-ready] .buttons .button {
+[data-project-ready] .buttons button {
   padding: 0.5rem 1.5rem;
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
+  border-radius: 0.5rem;
 }
 [data-project-ready] .buttons .clear-all-data {
   border: 1px solid #EF4444;
