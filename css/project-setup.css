@@ -203,6 +203,11 @@ img {
   padding-right: 0.5rem;
 }
 
+button {
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
 *,
 *::before,
 *::after {
@@ -408,6 +413,11 @@ img {
   padding-right: 0.5rem;
 }
 
+button {
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
 .head {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -558,8 +568,6 @@ textarea {
   border-radius: 0.5rem;
   font-weight: 600;
   line-height: 1.5rem;
-  -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
 }
 .content .content-form button:hover, .content .container-task button:hover {
   background-color: #1D4ED8;
@@ -625,8 +633,6 @@ textarea {
   font-size: 1.5rem;
   background-color: #4F46E5;
   border-radius: 0.5rem;
-  -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
 }
 .container .generate-sample-project button::before {
   content: url("/images/icons/rocket.svg");
@@ -651,6 +657,99 @@ textarea {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+.container .modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  color: #111827;
+}
+.container .modal.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.container .modal-content {
+  background-color: white;
+  padding: 1.25rem;
+  max-width: 400px;
+  border-radius: 0.5rem;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5rem;
+}
+.container .modal-content img {
+  height: 3.75rem;
+  width: 3.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.container .modal-content h5 {
+  font-size: 1.25rem;
+}
+.container .modal-content .modal-message {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: #374151;
+}
+.container .modal-content .close-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+.container .modal-content .close-btn img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.container .modal-content .modal-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 1.5rem;
+}
+.container .modal-content .modal-action button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+}
+.container .modal-content .modal-action .cancel-btn {
+  background-color: #E5E7EB;
+  color: #374151;
+}
+.container .modal-content .modal-action .cancel-btn:hover {
+  background-color: #F3F4F6;
+}
+.container .modal-content .modal-action .confirm-btn {
+  background-color: #EF4444;
+  border: 1px solid #EF4444;
+  color: white;
+}
+.container .modal-content .modal-action .confirm-btn:hover {
+  background-color: white;
+  color: #EF4444;
 }
 
 [data-project-ready] {

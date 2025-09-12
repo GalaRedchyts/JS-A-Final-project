@@ -69,7 +69,6 @@
         background-color: $btnBg2;
         border-radius: toRem(8);
         line-height: toRem(24);
-        transition: background-color 0.3s ease;
         
         &:hover {
             background-color: $btnHoverBg2;

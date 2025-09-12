@@ -126,7 +126,6 @@ textarea {
             border-radius: toRem(8);
             font-weight: 600;
             line-height: toRem(24);
-            transition: background-color 0.3s ease;
 
             &:hover {
                 background-color: $btnHoverBg2;

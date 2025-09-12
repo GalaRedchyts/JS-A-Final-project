@@ -1,4 +1,74 @@
 import LocalStorageService from "./services/local-storage-service.js";
+import { userNames, taskTitles } from "./data/sample-data.js";
+
+function getRandomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function getRandomStatus() {
+    return  getRandomItem(["to-do", "in-progress", "done", "on-hold", "canceled"]);
+}
+
+// MODAL
+const modal = document.getElementById("confirmModal");
+const cancelBtn = modal.querySelector(".cancel-btn");
+const confirmBtn = modal.querySelector(".confirm-btn");
+const closeBtn = modal.querySelector(".close-btn");
+
+function showModal(onConfirm) {
+    modal.classList.add("active");
+
+    const handleCancel = () => {
+        modal.classList.remove("active");
+        cleanup();
+    };
+
+    const handleConfirm = () => {
+        onConfirm();
+        modal.classList.remove("active");
+        cleanup();
+    };
+
+    const handleClose = () => {
+        modal.classList.remove("active");
+        cleanup();
+    };
+
+    function cleanup() {
+        cancelBtn.removeEventListener("click", handleCancel);
+        confirmBtn.removeEventListener("click", handleConfirm);
+        closeBtn.removeEventListener("click", handleClose);
+    }
+
+    cancelBtn.addEventListener("click", handleCancel);
+    confirmBtn.addEventListener("click", handleConfirm);
+    closeBtn.addEventListener("click", handleClose);
+}
+
+//PROJECT GENERATION
+function generateProject(storage, generateSection, readySection) {
+    storage.clearAll();
+
+    const users = [];
+    for (let i = 0; i < 3; i++) {
+        const user = storage.addUser({ name: getRandomItem(userNames) });
+        users.push(user);
+    }
+
+    for (let i = 0; i < 10; i++) {
+        const randomUser = getRandomItem(users);
+        storage.addTask({
+            title: getRandomItem(taskTitles),
+            status: getRandomStatus(),
+            userId: randomUser.id
+        });
+    }
+
+    generateSection.style.display = "none";
+    readySection.style.display = "flex";
+}
+
+//MAIN
 
 document.addEventListener("DOMContentLoaded", () => {
     const storage = new LocalStorageService();
@@ -10,21 +80,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const exploreTasksBtn = document.querySelector(".explore-tasks");
 
     generateBtn.addEventListener("click", () => {
-        const user1 = storage.addUser({ name: "Alice" });
-        const user2 = storage.addUser({ name: "Bob" });
-
-        storage.addTask({ title: "Design homepage", status: "in-progress", userId: user1.id });
-        storage.addTask({ title: "Fix logen bug", status: "to-do", userId: user2.id });
-        storage.addTask({ title: "Prepare presentation", status: "done", userId: user1.id });
-
-        generateSection.style.display = "none";
-        readySection.style.display = "flex";
+        if (storage.getUsers().length || storage.getTasks().length) {
+            showModal(() => generateProject(storage, generateSection, readySection));
+        } else {
+            generateProject(storage, generateSection, readySection);
+        }
     });
 
     clearBtn.addEventListener("click", () => {
+       showModal(() => {
         storage.clearAll();
         generateSection.style.display = "flex";
         readySection.style.display = "none";
+       });
     });
 
     if (storage.getUsers().length || storage.getTasks().length) {

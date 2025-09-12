@@ -203,6 +203,11 @@ img {
   padding-right: 0.5rem;
 }
 
+button {
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
 *,
 *::before,
 *::after {
@@ -408,6 +413,11 @@ img {
   padding-right: 0.5rem;
 }
 
+button {
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
 .head {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -558,8 +568,6 @@ textarea {
   border-radius: 0.5rem;
   font-weight: 600;
   line-height: 1.5rem;
-  -webkit-transition: background-color 0.3s ease;
-  transition: background-color 0.3s ease;
 }
 .content .content-form button:hover, .content .container-task button:hover {
   background-color: #1D4ED8;
