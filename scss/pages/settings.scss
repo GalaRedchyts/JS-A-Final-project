@@ -41,6 +41,7 @@
                 img {
                     max-width: toRem(40);
                     max-height: toRem(40);
+                    width: 100%;
 
                 }
 
@@ -79,4 +80,88 @@
             background-color: $btnActiveBg;
         }
     }
+}
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    color: $font-color;
+
+    &.active {
+        display: flex;
+    }
+
+    .modal-content { 
+        background-color: #FFFF;
+        padding: toRem($p-24) toRem($p-32);
+        max-width: toRem(600);
+        border-radius: toRem(12);
+        display: flex;
+        flex-direction: column;
+        gap: toRem($gap-24);
+
+        .modal-action {
+            display: flex;
+
+            button {
+               font-weight: 600;
+                color: #FFFF;
+                padding: toRem($p-8) toRem($p-24);
+                background-color: $btnBg2;
+                border-radius: toRem(8);
+
+                &:hover {
+                    background-color: $btnHoverBg2;
+                }
+            }           
+        }
+
+        input {
+            border: 1px solid $borderTasks;
+            padding: toRem($p-13) toRem($p-8);
+            border-radius: toRem(8);
+
+            &::placeholder {
+                color: #9CA3AF;
+                font-size: toRem($fs-14);
+                font-weight: 400;
+            }
+        }
+
+        label {
+            font-size: toRem($fs-14);
+            font-weight: 500;
+
+            span {
+                color: $btnDelete;
+            }
+        }
+    }
+
+    .avatars {
+        display: flex;
+        flex-wrap: wrap;
+        gap: toRem($gap-12);
+
+        img {
+            width: toRem(40);
+            height: toRem(40);
+
+            &.selected::before {
+                content: url("/images/icons/square-check-big.svg");
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                top: -5px;
+                right: -5px;
+                padding: 2px;
+            }
+        }
+    }
+    
 }

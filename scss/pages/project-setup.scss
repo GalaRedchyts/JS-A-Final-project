@@ -94,7 +94,7 @@
     .modal-content { 
         background-color: #FFFF;
         padding: toRem($p-20);
-        max-width: 400px;
+        max-width: toRem(400);
         border-radius: toRem(8);
         text-align: center;
         display: flex;

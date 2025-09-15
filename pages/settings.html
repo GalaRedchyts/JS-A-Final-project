@@ -75,41 +75,9 @@
                     <div class="head-content">
                         <h2>Team Members</h2>
                         <ul class="list-users">
-                            <li data-current-user>
-                                <img src="/images/user-image.webp" alt="user image">
-                                <h5 class="user-name" data-name>Olenka</h5>
-                                <span>Current User</span>
-                            </li>
-                            <li>
-                                <img src="/images/user-image.webp" alt="user image">
-                                <h5 class="user-name" data-name>Anna</h5>
-                                <button class="delete-button" aria-label="Delete">
-                                    <img src="/images/icons/trash.svg" alt="icon trash">
-                                </button>
-                            </li>
-                            <li>
-                                <img src="/images/user-image.webp" alt="user image">
-                                <h5 class="user-name" data-name>Vlada</h5>
-                                <button class="delete-button" aria-label="Delete">
-                                    <img src="/images/icons/trash.svg" alt="icon trash">
-                                </button>
-                            </li>
-                            <li>
-                                <img src="/images/user-image.webp" alt="user image">
-                                <h5 class="user-name" data-name>Roman</h5>
-                                <button class="delete-button" aria-label="Delete">
-                                    <img src="/images/icons/trash.svg" alt="icon trash">
-                                </button>
-                            </li>
-                            <li>
-                                <img src="/images/user-image.webp" alt="user image">
-                                <h5 class="user-name" data-name>Sofia</h5>
-                                <button class="delete-button" aria-label="Delete">
-                                    <img src="/images/icons/trash.svg" alt="icon trash">
-                                </button>
-                            </li>
+                        
                         </ul>
-                        <div class="members">You have <span data-user-count>5</span> team members.</div>
+                        <div class="members">You have <span data-user-count>0</span> team members.</div>
                     </div>
                     <div class="add-member">
                         <button>+ Add New Member</button>
@@ -117,8 +85,25 @@
                 </div>
              </div>
         </main> 
+
+        <div class="modal" id="addMemberModal">
+            <div class="modal-content">
+                <h5>Create new team member</h5>
+
+                <label for="memberName">Name<span>*</span></label>
+                <input type="text" mane="memberName" placeholder="Enter member's name" required maxlength="30" minlength="2">
+
+                <div class="avatar-select">
+                    <div class="avatars"></div>
+                </div>
+
+                <div class="modal-action">
+                    <button class="confirm-add">Create</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- <script src="/scripts/create-tasks.js" defer></script> -->
+    <script type="module" src="/scripts/settings.js" defer></script>
 </body>
 
 </html>

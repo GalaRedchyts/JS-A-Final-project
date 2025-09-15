@@ -208,6 +208,15 @@ button {
   transition: background-color 0.3s ease;
 }
 
+body.blurred .container {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-transition: -webkit-filter 0.3s ease;
+  transition: -webkit-filter 0.3s ease;
+  transition: filter 0.3s ease;
+  transition: filter 0.3s ease, -webkit-filter 0.3s ease;
+}
+
 *,
 *::before,
 *::after {
@@ -416,6 +425,15 @@ img {
 button {
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
+}
+
+body.blurred .container {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-transition: -webkit-filter 0.3s ease;
+  transition: -webkit-filter 0.3s ease;
+  transition: filter 0.3s ease;
+  transition: filter 0.3s ease, -webkit-filter 0.3s ease;
 }
 
 .head {
@@ -627,6 +645,7 @@ textarea {
 .content .head-content .list-users li img {
   max-width: 2.5rem;
   max-height: 2.5rem;
+  width: 100%;
 }
 .content .head-content .list-users li .user-name {
   -webkit-box-flex: 1;
@@ -655,4 +674,111 @@ textarea {
 }
 .content .add-member:active {
   background-color: #4338CA;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+  color: #111827;
+}
+.modal.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.modal .modal-content {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  max-width: 37.5rem;
+  border-radius: 0.75rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5rem;
+}
+.modal .modal-content .modal-action {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.modal .modal-content .modal-action button {
+  font-weight: 600;
+  color: white;
+  padding: 0.5rem 1.5rem;
+  background-color: #2563EB;
+  border-radius: 0.5rem;
+}
+.modal .modal-content .modal-action button:hover {
+  background-color: #1D4ED8;
+}
+.modal .modal-content input {
+  border: 1px solid #E5E7EB;
+  padding: 0.8125rem 0.5rem;
+  border-radius: 0.5rem;
+}
+.modal .modal-content input::-webkit-input-placeholder {
+  color: #9CA3AF;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.modal .modal-content input::-moz-placeholder {
+  color: #9CA3AF;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.modal .modal-content input:-ms-input-placeholder {
+  color: #9CA3AF;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.modal .modal-content input::-ms-input-placeholder {
+  color: #9CA3AF;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.modal .modal-content input::placeholder {
+  color: #9CA3AF;
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+.modal .modal-content label {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.modal .modal-content label span {
+  color: #EF4444;
+}
+.modal .avatars {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.modal .avatars img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+.modal .avatars img.selected::before {
+  content: url("/images/icons/square-check-big.svg");
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  padding: 2px;
 }

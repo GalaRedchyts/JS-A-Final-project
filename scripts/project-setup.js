@@ -1,5 +1,6 @@
 import LocalStorageService from "./services/local-storage-service.js";
 import { userNames, taskTitles } from "./data/sample-data.js";
+import { avatars } from "./data/avatars.js";
 
 function getRandomItem(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
@@ -51,7 +52,11 @@ function generateProject(storage, generateSection, readySection) {
 
     const users = [];
     for (let i = 0; i < 3; i++) {
-        const user = storage.addUser({ name: getRandomItem(userNames) });
+        const user = storage.addUser({ 
+            name: getRandomItem(userNames),
+            avatar: getRandomItem(avatars),
+            current: i === 0
+        });
         users.push(user);
     }
 
