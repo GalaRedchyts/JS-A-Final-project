@@ -116,12 +116,20 @@ header .nav .svg-icon {
 header .nav .item-nav, header .nav .bottom-link {
   padding: 0.75rem 1rem;
 }
-header .nav .item-nav:hover, header .nav .item-nav:active, header .nav .bottom-link:hover, header .nav .bottom-link:active {
+header .nav .item-nav:hover, header .nav .bottom-link:hover {
   background-color: #E0E7FF;
   color: #4F46E5;
   border-radius: 0.5rem;
 }
-header .nav .item-nav:hover .svg-icon, header .nav .item-nav:active .svg-icon, header .nav .bottom-link:hover .svg-icon, header .nav .bottom-link:active .svg-icon {
+header .nav .item-nav:hover .svg-icon, header .nav .bottom-link:hover .svg-icon {
+  color: #4F46E5;
+}
+header .nav .item-nav.active, header .nav .bottom-link.active {
+  background-color: #E0E7FF;
+  color: #4F46E5;
+  border-radius: 0.5rem;
+}
+header .nav .item-nav.active .svg-icon, header .nav .bottom-link.active .svg-icon {
   color: #4F46E5;
 }
 header .nav span {
@@ -215,6 +223,12 @@ body.blurred .container {
   transition: -webkit-filter 0.3s ease;
   transition: filter 0.3s ease;
   transition: filter 0.3s ease, -webkit-filter 0.3s ease;
+}
+
+.error-message {
+  margin-top: 0.5rem;
+  color: red;
+  display: none;
 }
 
 *,
@@ -335,12 +349,20 @@ header .nav .svg-icon {
 header .nav .item-nav, header .nav .bottom-link {
   padding: 0.75rem 1rem;
 }
-header .nav .item-nav:hover, header .nav .item-nav:active, header .nav .bottom-link:hover, header .nav .bottom-link:active {
+header .nav .item-nav:hover, header .nav .bottom-link:hover {
   background-color: #E0E7FF;
   color: #4F46E5;
   border-radius: 0.5rem;
 }
-header .nav .item-nav:hover .svg-icon, header .nav .item-nav:active .svg-icon, header .nav .bottom-link:hover .svg-icon, header .nav .bottom-link:active .svg-icon {
+header .nav .item-nav:hover .svg-icon, header .nav .bottom-link:hover .svg-icon {
+  color: #4F46E5;
+}
+header .nav .item-nav.active, header .nav .bottom-link.active {
+  background-color: #E0E7FF;
+  color: #4F46E5;
+  border-radius: 0.5rem;
+}
+header .nav .item-nav.active .svg-icon, header .nav .bottom-link.active .svg-icon {
   color: #4F46E5;
 }
 header .nav span {
@@ -436,6 +458,12 @@ body.blurred .container {
   transition: filter 0.3s ease, -webkit-filter 0.3s ease;
 }
 
+.error-message {
+  margin-top: 0.5rem;
+  color: red;
+  display: none;
+}
+
 .head {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -524,7 +552,7 @@ textarea {
   font-size: 1.5rem;
   line-height: 1.5rem;
 }
-.content .content-form .create-new-task, .content .container-task .create-new-task {
+.content .content-form .create-new-task, .content .content-form .edit-task, .content .container-task .create-new-task, .content .container-task .edit-task {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -538,26 +566,26 @@ textarea {
           align-items: start;
   width: 100%;
 }
-.content .content-form .create-new-task div, .content .container-task .create-new-task div {
+.content .content-form .create-new-task div, .content .content-form .edit-task div, .content .container-task .create-new-task div, .content .container-task .edit-task div {
   width: 100%;
 }
-.content .content-form .create-new-task div span, .content .container-task .create-new-task div span {
+.content .content-form .create-new-task div span, .content .content-form .edit-task div span, .content .container-task .create-new-task div span, .content .container-task .edit-task div span {
   color: red;
 }
-.content .content-form .create-new-task label, .content .container-task .create-new-task label {
+.content .content-form .create-new-task label, .content .content-form .edit-task label, .content .container-task .create-new-task label, .content .container-task .edit-task label {
   font-size: 0.875rem;
   line-height: 150%;
 }
-.content .content-form .create-new-task input, .content .content-form .create-new-task select, .content .content-form .create-new-task textarea, .content .container-task .create-new-task input, .content .container-task .create-new-task select, .content .container-task .create-new-task textarea {
+.content .content-form .create-new-task input, .content .content-form .create-new-task select, .content .content-form .create-new-task textarea, .content .content-form .edit-task input, .content .content-form .edit-task select, .content .content-form .edit-task textarea, .content .container-task .create-new-task input, .content .container-task .create-new-task select, .content .container-task .create-new-task textarea, .content .container-task .edit-task input, .content .container-task .edit-task select, .content .container-task .edit-task textarea {
   padding: 0.8125rem 0.5rem;
   border: 1px solid #E5E7EB;
   border-radius: 0.5rem;
   margin-top: 0.5rem;
 }
-.content .content-form .create-new-task input:hover, .content .content-form .create-new-task select:hover, .content .content-form .create-new-task textarea:hover, .content .container-task .create-new-task input:hover, .content .container-task .create-new-task select:hover, .content .container-task .create-new-task textarea:hover {
+.content .content-form .create-new-task input:hover, .content .content-form .create-new-task select:hover, .content .content-form .create-new-task textarea:hover, .content .content-form .edit-task input:hover, .content .content-form .edit-task select:hover, .content .content-form .edit-task textarea:hover, .content .container-task .create-new-task input:hover, .content .container-task .create-new-task select:hover, .content .container-task .create-new-task textarea:hover, .content .container-task .edit-task input:hover, .content .container-task .edit-task select:hover, .content .container-task .edit-task textarea:hover {
   border: 1px solid #9CA3AF;
 }
-.content .content-form .create-new-task .form-field, .content .container-task .create-new-task .form-field {
+.content .content-form .create-new-task .form-field, .content .content-form .edit-task .form-field, .content .container-task .create-new-task .form-field, .content .container-task .edit-task .form-field {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -566,7 +594,7 @@ textarea {
       -ms-flex-direction: column;
           flex-direction: column;
 }
-.content .content-form .create-new-task .form-field select, .content .container-task .create-new-task .form-field select {
+.content .content-form .create-new-task .form-field select, .content .content-form .edit-task .form-field select, .content .container-task .create-new-task .form-field select, .content .container-task .edit-task .form-field select {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -575,7 +603,7 @@ textarea {
   background-position: right 0.75rem center;
   background-size: 1rem;
 }
-.content .content-form .create-new-task .form-field__control, .content .container-task .create-new-task .form-field__control {
+.content .content-form .create-new-task .form-field__control, .content .content-form .edit-task .form-field__control, .content .container-task .create-new-task .form-field__control, .content .container-task .edit-task .form-field__control {
   color: #374151;
   font-size: 0.875rem;
 }

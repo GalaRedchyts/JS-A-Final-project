@@ -85,6 +85,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (editBtn) {
       editBtn.addEventListener("click", () => {
+        localStorage.setItem("lastEditedTaskId", lastTask.id);
+        
         window.location.href = "edit-task.html";
       });
     }

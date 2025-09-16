@@ -116,12 +116,20 @@ header .nav .svg-icon {
 header .nav .item-nav, header .nav .bottom-link {
   padding: 0.75rem 1rem;
 }
-header .nav .item-nav:hover, header .nav .item-nav:active, header .nav .bottom-link:hover, header .nav .bottom-link:active {
+header .nav .item-nav:hover, header .nav .bottom-link:hover {
   background-color: #E0E7FF;
   color: #4F46E5;
   border-radius: 0.5rem;
 }
-header .nav .item-nav:hover .svg-icon, header .nav .item-nav:active .svg-icon, header .nav .bottom-link:hover .svg-icon, header .nav .bottom-link:active .svg-icon {
+header .nav .item-nav:hover .svg-icon, header .nav .bottom-link:hover .svg-icon {
+  color: #4F46E5;
+}
+header .nav .item-nav.active, header .nav .bottom-link.active {
+  background-color: #E0E7FF;
+  color: #4F46E5;
+  border-radius: 0.5rem;
+}
+header .nav .item-nav.active .svg-icon, header .nav .bottom-link.active .svg-icon {
   color: #4F46E5;
 }
 header .nav span {

@@ -12,3 +12,89 @@
         }
     }
 }
+
+.modal {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    color: $font-color;
+  
+    &.active {
+      display: flex;
+    }
+}
+
+.modal-content { 
+    background-color: #FFFF;
+    padding: toRem($p-20);
+    max-width: toRem(400);
+    border-radius: toRem(8);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: toRem($gap-24);
+
+    .img-container {
+        display: flex;
+        justify-content: center;
+        img {
+            height: toRem(60);
+            width: toRem(60);
+        } 
+    }
+ 
+    h5 {
+        font-size: toRem($fs-20);
+    }
+
+    .modal-message {
+        font-size: toRem($fs-14);
+        font-weight: 400;
+        color: $mainColor;
+    }
+
+    .close-btn {
+        display: flex;
+        justify-content: end;
+
+        img {
+            width: toRem(20);
+            height: toRem(20);
+        }
+    }
+
+    .modal-action {
+        display: flex;
+        justify-content: center;
+        gap: toRem($gap-24);
+
+        button {
+            padding: toRem($p-8) toRem($p-24);
+            border-radius: toRem(8);
+        }
+
+        .cancel-btn {
+            background-color: $borderTasks;
+            color: $mainColor;
+
+            &:hover {
+                background-color: $mainBgColor;
+            }
+        }
+
+        .confirm-btn {
+            background-color: $btnDelete;
+            border: 1px solid $btnDelete;
+            color: #FFFF;
+
+            &:hover {
+                background-color: #FFFF;
+                color: $btnDelete;
+            }
+        }
+    }
+}

@@ -31,7 +31,7 @@ header {
         .item-nav, .bottom-link {
             padding: toRem($p-12) toRem($p-16);
 
-            &:hover, &:active {
+            &:hover {
                 background-color: $bgHoverColor;
                 color: $btnBg1;
                 border-radius: toRem($p-8);
@@ -39,6 +39,16 @@ header {
                 .svg-icon {
                     color: $btnBg1;
                 }
+            }
+        }
+
+        .item-nav.active, .bottom-link.active {
+            background-color: $bgHoverColor;
+            color: $btnBg1;
+            border-radius: toRem($p-8);
+
+            .svg-icon {
+                color: $btnBg1;
             }
         }
 

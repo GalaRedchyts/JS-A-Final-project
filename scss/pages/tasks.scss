@@ -127,6 +127,7 @@
 
     .tasks-view-cards {
         gap: toRem($gap-24);
+        flex-wrap: wrap;
 
         .card {
             max-width: toRem(260);
