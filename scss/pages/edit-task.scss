@@ -1,0 +1,14 @@
+@import "create-task.scss";
+
+.edit-task {
+    .button-wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .delete {
+            border: 1px solid #EF4444;
+            color: #EF4444;
+            background-color: #FFFFFF;
+        }
+    }
+}

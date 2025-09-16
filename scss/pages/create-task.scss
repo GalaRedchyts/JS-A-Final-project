@@ -67,7 +67,7 @@ textarea {
             line-height: toRem($fs-24);
         }
 
-        .create-new-task {
+        .create-new-task, .edit-task {
             display: flex;
             flex-direction: column;
             gap: toRem($gap-24);

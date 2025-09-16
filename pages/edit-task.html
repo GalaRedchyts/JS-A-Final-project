@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/new-task.css">
+    <link rel="stylesheet" href="/css/edit-task.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -66,29 +66,62 @@
         <main>
              <div class="container">
                 <div class="head">
-                    <h1>Task Details</h1>
+                    <h1>Edit Task</h1>
                     <div class="user-image">
                         <img src="/images/user-image.webp" alt="user-image">
                     </div>
                 </div>
                 <div class="content">
                     <button class="back-to-tasks">Back to tasks</button>
-                <div class="container-task"> 
-                    <ul class="content-new-task">
+                    <div class="content-form">
+                       <h2>Edit task</h2>
+                        <form action="#" class="edit-task">
+                            <div>
+                                <label for="title">Title<span>*</span></label>
+                                <input type="text" id="title" name="title" minlength="2" autocomplete="on" required>
+                                <small class="error-message"></small>
+                            </div>
+                            <div>
+                                <label for="description">Description</label>
+                                <textarea id="description" name="description" rows="7" ></textarea>
+                            </div>
+                            <div class="form-field">
+                                <label for="assignee">Assignee</label>
+                                <select name="assignee" id="assignee">
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="priority">Priority</label>
+                                <select name="priority" id="priority">
+                                    <option value="Medium" selected>Medium</option>
+                                    <option value="Low">Low</option>
+                                    <option value="High">High</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label for="status">Status</label>
+                                <select name="status" id="status">
+                                    <option value="To do" selected>To do</option>
+                                    <option value="On Hold">On hold</option>
+                                    <option value="In Progress">In progress</option>
+                                    <option value="Done">Done</option>
+                                    <option value="Canceled">Canceled</option>
+                                </select>
+                            </div>
 
-                    </ul>
-                    <div class="buttons">
-                        <button class="edit">Edit Task</button>
-                        <button class="complete">Complete</button>
+                            <div class="button-wrapper">
+                                <button type="submit" class="save">Save Changes</button>
+                                <button type="submit" class="delete">Delete</button>
+                            </div>
+                            
+                        </form> 
                     </div>
-                </div>
+                    
                 </div>
              </div>
         </main> 
-    </div> 
-    <script type="module" src="/scripts/create-task.js" defer></script>
-    <script type="module" src="/scripts/new-task.js" defer></script>
-   
+    </div>
+    <script type="module" src="/scripts/edit-task.js" defer></script>
 </body>
 
 </html>

@@ -377,3 +377,17 @@ textarea {
 .content .content-form button:hover, .content .container-task button:hover {
   background-color: #1D4ED8;
 }
+
+.edit-task .button-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.edit-task .button-wrapper .delete {
+  border: 1px solid #EF4444;
+  color: #EF4444;
+  background-color: #FFFFFF;
+}

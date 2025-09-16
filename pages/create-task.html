@@ -79,6 +79,7 @@
                             <div>
                                 <label for="title">Title<span>*</span></label>
                                 <input type="text" id="title" name="title" minlength="2" autocomplete="on" placeholder="e.g. Buy groceries" required>
+                                <small class="error-message"></small>
                             </div>
                             <div>
                                 <label for="description">Description</label>
@@ -87,9 +88,6 @@
                             <div class="form-field">
                                 <label for="assignee">Assignee</label>
                                 <select name="assignee" id="assignee">
-                                    <option value="Olenka">Olenka</option>
-                                    <option value="Vlad">Vlad</option>
-                                    <option value="Roman">Roman</option>
                                 </select>
                             </div>
                             <div class="form-field">
@@ -123,7 +121,7 @@
              </div>
         </main> 
     </div>
-    <script src="/scripts/create-task.js" defer></script>
+    <script type="module" src="/scripts/create-task.js" defer></script>
 </body>
 
 </html>

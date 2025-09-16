@@ -216,3 +216,9 @@ body.blurred .container {
   transition: filter 0.3s ease;
   transition: filter 0.3s ease, -webkit-filter 0.3s ease;
 }
+
+.error-message {
+  margin-top: 0.5rem;
+  color: red;
+  display: none;
+}
