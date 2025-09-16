@@ -351,6 +351,11 @@ body.blurred .container {
 .tasks .filters-container .tasks-actions button:active {
   background-color: #4338CA;
 }
+.tasks .status {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+}
 .tasks .tasks-view {
   display: none;
 }
