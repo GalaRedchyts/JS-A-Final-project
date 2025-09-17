@@ -709,7 +709,7 @@ textarea {
 .content .progress-bar-wrapper .progress-bar__fill {
   height: 100%;
   background-color: #2563EB;
-  width: 50%;
+  width: 0;
   -webkit-transition: width 0.3s ease-in-out;
   transition: width 0.3s ease-in-out;
 }

@@ -1,4 +1,5 @@
 import LocalStorageService from "./services/local-storage-service.js";
+import { renderCurrentUserAvatar } from "./services/current-user.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const storage = new LocalStorageService();
@@ -106,4 +107,6 @@ document.addEventListener("DOMContentLoaded", () => {
     cancelBtn.addEventListener("click", handleCancel);
     closeBtn.addEventListener("click", handleClose);
     confirmBtn.addEventListener("click", handleConfirm);
+
+    renderCurrentUserAvatar();
 });
