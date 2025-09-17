@@ -1,73 +1,96 @@
+function generateId() {
+  if (window.crypto && crypto.randomUUID) {
+    return crypto.randomUUID();
+  }
+  return Date.now().toString(36) + Math.random().toString(36).substr(2, 9);
+}
+
 export default class LocalStorageService {
-    constructor() {
-        this.USERS_KEY = 'users';
-        this.TASKS_KEY = 'tasks';
+  constructor() {
+    this.USERS_KEY = "users";
+    this.TASKS_KEY = "tasks";
 
-        if (!localStorage.getItem(this.USERS_KEY)) {
-            localStorage.setItem(this.USERS_KEY, JSON.stringify([]));
-        }
-
-        if (!localStorage.getItem(this.TASKS_KEY)) {
-            localStorage.setItem(this.TASKS_KEY, JSON.stringify([]));
-        }
+    if (!localStorage.getItem(this.USERS_KEY)) {
+      localStorage.setItem(this.USERS_KEY, JSON.stringify([]));
     }
-
-    // USERS
-
-    getUsers() {
-        return JSON.parse(localStorage.getItem(this.USERS_KEY)) || [];
+    if (!localStorage.getItem(this.TASKS_KEY)) {
+      localStorage.setItem(this.TASKS_KEY, JSON.stringify([]));
     }
+  }
 
-    addUser(user) {
-        const users = this.getUsers();
-        const newId = users.length ? Math.max(...users.map(u => u.id || 0)) + 1 : 1;
-        const newUser = { id: newId, ...user };
-        users.push(newUser);
-        localStorage.setItem("users", JSON.stringify(users));
-        return newUser;
-      }
+  // ===== USERS =====
+  getUsers() {
+    return JSON.parse(localStorage.getItem(this.USERS_KEY)) || [];
+  }
 
-    updateUser(id, updatedData) {
-        let users = this.getUsers();
-        users = users.map(u => u.id === id ? { ...u, ...updatedData } : u);
-        localStorage.setItem(this.USERS_KEY, JSON.stringify(users));
-    }
+  addUser(user) {
+    const users = this.getUsers();
+    const newUser = {
+      id: generateId(),
+      generated: user.generated ?? false,
+      ...user,
+    };
+    users.push(newUser);
+    localStorage.setItem(this.USERS_KEY, JSON.stringify(users));
+    return newUser;
+  }
 
-    deleteUser(id) {
-        let users = this.getUsers();
-        users = users.filter(u => u.id !== id);
-        localStorage.setItem(this.USERS_KEY, JSON.stringify(users));
-    }
+  updateUser(id, updatedData) {
+    let users = this.getUsers();
+    users = users.map(u =>
+      String(u.id) === String(id) ? { ...u, ...updatedData } : u
+    );
+    localStorage.setItem(this.USERS_KEY, JSON.stringify(users));
+  }
 
-    //TASKS
+  deleteUser(id) {
+    let users = this.getUsers();
+    users = users.filter(u => String(u.id) !== String(id));
+    localStorage.setItem(this.USERS_KEY, JSON.stringify(users));
+  }
 
-    getTasks() {
-        return JSON.parse(localStorage.getItem(this.TASKS_KEY)) || [];
-    }
+  // ===== TASKS =====
+  getTasks() {
+    return JSON.parse(localStorage.getItem(this.TASKS_KEY)) || [];
+  }
 
-    addTask(task) {
-        const tasks = this.getTasks();
-        const newId = tasks.length ? Math.max(...tasks.map(t => t.id || 0)) + 1 : 1;
-        const newTask = { id: newId, ...task };
-        tasks.push(newTask);
-        localStorage.setItem("tasks", JSON.stringify(tasks));
-        return newTask;
-    }
+  addTask(task) {
+    const tasks = this.getTasks();
+    const newTask = {
+      id: generateId(),
+      generated: task.generated ?? false,
+      title: task.title || "Untitled",
+      description: task.description || "",
+      priority: task.priority || "Medium",
+      status: task.status || "To do",
+      userId: task.userId || null,
+      dueDate: task.dueDate || null,
+    };
+    tasks.push(newTask);
+    localStorage.setItem(this.TASKS_KEY, JSON.stringify(tasks));
+    return newTask;
+  }
 
-    updateTask(id, updatedData) {
-        let tasks = this.getTasks();
-        tasks = tasks.map(t => t.id === id ? { ...t, ...updatedData } : t);
-        localStorage.setItem(this.TASKS_KEY, JSON.stringify(tasks));
-    }
+  updateTask(id, updatedFields) {
+    const tasks = this.getTasks();
+    const updatedTasks = tasks.map(task =>
+      String(task.id) === String(id) ? { ...task, ...updatedFields } : task
+    );
+    localStorage.setItem(this.TASKS_KEY, JSON.stringify(updatedTasks));
+  }
 
-    deleteTask(id) {
-        let tasks = this.getTasks();
-        tasks = tasks.filter(t => t.id !== id);
-        localStorage.setItem(this.TASKS_KEY, JSON.stringify(tasks));
-    }
+  deleteTask(id) {
+    let tasks = this.getTasks();
+    tasks = tasks.filter(t => String(t.id) !== String(id));
+    localStorage.setItem(this.TASKS_KEY, JSON.stringify(tasks));
+  }
 
-    clearAll() {
-        localStorage.setItem(this.USERS_KEY, JSON.stringify([]));
-        localStorage.setItem(this.TASKS_KEY, JSON.stringify([]));
-    }
+  saveTasks(tasks) {
+    localStorage.setItem(this.TASKS_KEY, JSON.stringify(tasks));
+  }
+
+  clearAll() {
+    localStorage.setItem(this.USERS_KEY, JSON.stringify([]));
+    localStorage.setItem(this.TASKS_KEY, JSON.stringify([]));
+  }
 }

@@ -10,6 +10,18 @@ function getRandomStatus() {
     return  getRandomItem(["to-do", "in-progress", "done", "on-hold", "canceled"]);
 }
 
+function getRandomPriority() {
+    return getRandomItem(["Low", "Medium", "High"]);
+}
+
+function getRandomDueDate() {
+    const today = new Date();
+    const randomDays = Math.floor(Math.random() * 31);
+    const dueDate = new Date(today);
+    dueDate.setDate(today.getDate() + randomDays);
+    return dueDate.toISOString().split("T")[0];
+}
+
 // MODAL
 const modal = document.getElementById("confirmModal");
 const cancelBtn = modal.querySelector(".cancel-btn");
@@ -55,7 +67,8 @@ function generateProject(storage, generateSection, readySection) {
         const user = storage.addUser({ 
             name: getRandomItem(userNames),
             avatar: getRandomItem(avatars),
-            current: i === 0
+            current: i === 0,
+            generated: true
         });
         users.push(user);
     }
@@ -65,7 +78,10 @@ function generateProject(storage, generateSection, readySection) {
         storage.addTask({
             title: getRandomItem(taskTitles),
             status: getRandomStatus(),
-            userId: randomUser.id
+            priority: getRandomPriority(),
+            userId: randomUser.id,
+            dueDate: getRandomDueDate(),
+            generated: true
         });
     }
 
@@ -74,7 +90,6 @@ function generateProject(storage, generateSection, readySection) {
 }
 
 //MAIN
-
 document.addEventListener("DOMContentLoaded", () => {
     const storage = new LocalStorageService();
 
@@ -84,23 +99,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const clearBtn = readySection.querySelector(".clear-all-data");
     const exploreTasksBtn = document.querySelector(".explore-tasks");
 
-    generateBtn.addEventListener("click", () => {
-        if (storage.getUsers().length || storage.getTasks().length) {
-            showModal(() => generateProject(storage, generateSection, readySection));
-        } else {
-            generateProject(storage, generateSection, readySection);
-        }
-    });
+    function hasGeneratedData() {
+        const generatedUsers = storage.getUsers().filter(u => u.generated);
+        const generatedTasks = storage.getTasks().filter(t => t.generated);
+        return generatedUsers.length || generatedTasks.length;
+    }
 
-    clearBtn.addEventListener("click", () => {
-       showModal(() => {
-        storage.clearAll();
-        generateSection.style.display = "flex";
-        readySection.style.display = "none";
-       });
-    });
+    function hasManualData() {
+        const manualUsers = storage.getUsers().filter(u => !u.generated);
+        const manualTasks = storage.getTasks().filter(t => !t.generated);
+        return manualUsers.length || manualTasks.length;
+    }
 
-    if (storage.getUsers().length || storage.getTasks().length) {
+    if (hasGeneratedData()) {
         generateSection.style.display = "none";
         readySection.style.display = "flex";
     } else {
@@ -108,9 +119,25 @@ document.addEventListener("DOMContentLoaded", () => {
         readySection.style.display = "none";
     }
 
+    generateBtn.addEventListener("click", () => {
+        if (hasManualData()) {
+            showModal(() => generateProject(storage, generateSection, readySection));
+        } else {
+            generateProject(storage, generateSection, readySection);
+        }
+    });
+
+    clearBtn.addEventListener("click", () => {
+        showModal(() => {
+            storage.clearAll();
+            generateSection.style.display = "flex";
+            readySection.style.display = "none";
+        });
+    });
+
     if (exploreTasksBtn) {
         exploreTasksBtn.addEventListener("click", () => {
             window.location.href = "pages/tasks.html";
-        });
+        })
     }
 });

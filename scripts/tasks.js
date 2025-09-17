@@ -11,6 +11,24 @@ document.addEventListener("DOMContentLoaded", () => {
   const textFilter = document.getElementById("filter");
   const createBtn = document.querySelector(".tasks-actions button");
 
+  function populateUserFilter() {
+    const users = storage.getUsers();
+    userFilter.innerHTML = `<option value="All">All</option>`;
+    users.forEach(user => {
+      const opt = document.createElement("option");
+      opt.value = String(user.id);
+      opt.textContent = user.name;
+      userFilter.appendChild(opt);
+    });
+
+    const savedUser = sessionStorage.getItem("user") || "All";
+    if ([...userFilter.options].some(opt => opt.value === savedUser)) {
+      userFilter.value = savedUser;
+    } else {
+      userFilter.value = "All";
+    }
+  }
+
   function renderTasks() {
     const tasks = storage.getTasks();
     const users = storage.getUsers();
@@ -24,18 +42,19 @@ document.addEventListener("DOMContentLoaded", () => {
     listView.innerHTML = "";
 
     const filteredTasks = tasks.filter(task => {
+      const assignee = users.find(u => String(u.id) === String(task.userId));
       const matchStatus = selectedStatus === "All" || task.status === selectedStatus;
-      const matchUser = selectedUser === "All" || users.find(u => u.id === task.userId)?.name === selectedUser;
+      const matchUser = selectedUser === "All" || (assignee && String(assignee.id) === selectedUser);
       const matchText = task.title.toLowerCase().includes(searchText);
       return matchStatus && matchUser && matchText;
     });
 
     filteredTasks.forEach(task => {
-      const assignee = users.find(u => u.id === task.userId);
+      const assignee = users.find(u => String(u.id) === String(task.userId));
       const assigneeName = assignee ? assignee.name : "Unassigned";
       const assigneeImage = assignee ? assignee.avatar : "/images/user-image.webp";
 
-      //CARD
+      // CARD view
       const cardItem = document.createElement("li");
       cardItem.className = "card";
       cardItem.dataset.id = task.id;
@@ -61,8 +80,13 @@ document.addEventListener("DOMContentLoaded", () => {
           </button>
         </div>
       `;
+
+      const doneBtnCard = cardItem.querySelector(".action-btn.done");
+      if (task.status === "done" && doneBtnCard) doneBtnCard.style.display = "none";
+
       cardsView.appendChild(cardItem);
 
+      // LIST view
       const listItem = document.createElement("li");
       listItem.className = "card";
       listItem.dataset.id = task.id;
@@ -88,6 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
           </button>
         </div>
       `;
+      const doneBtnList = listItem.querySelector(".action-btn.done");
+      if (task.status === "done" && doneBtnList) doneBtnList.style.display = "none";
+
       listView.appendChild(listItem);
     });
 
@@ -115,39 +142,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const card = e.target.closest("li.card");
     if (!card) {
       return;
-    }
-    const id = parseInt(card.dataset.id, 10);
-
+    } 
+  
+    const id = String(card.dataset.id);
+  
     if (e.target.closest(".done")) {
-      storage.updateTask(id, { status: "Done"});
-      renderTasks();
-    }
+      storage.updateTask(id, { status: "done" });
 
+      const statusEl = card.querySelector("[data-status]");
+      if (statusEl) {
+        statusEl.textContent = "done";
+        statusEl.className = "status status_done";
+        statusEl.dataset.status = "done";
+      }
+  
+      const doneBtn = card.querySelector(".action-btn.done");
+      if (doneBtn) doneBtn.remove();
+    }
+  
     if (e.target.closest(".edit")) {
-      sessionStorage.setItem("editTaskId", id);
+      localStorage.setItem("lastEditedTaskId", id);
       window.location.href = "edit-task.html";
     }
-
-    if (e.target.closest(".delete")) {
-      storage.deleteTask(id);
-      renderTasks();
-    }
-  });
+  });  
 
   createBtn.addEventListener("click", () => {
     window.location.href = "create-task.html";
   });
 
+  populateUserFilter();
   viewSwitcher.value = sessionStorage.getItem("view") || "cards";
   statusFilter.value = sessionStorage.getItem("status") || "All";
-  userFilter.value = sessionStorage.getItem("user") || "All";
   textFilter.value = sessionStorage.getItem("filter") || "";
 
   renderTasks();
 });
-
-
-
-
-  
-  

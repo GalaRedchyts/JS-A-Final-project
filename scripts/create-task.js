@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const form = document.querySelector(".create-new-task");
-  if(!form) {
+  if (!form) {
     return;
   }
 
@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const newTask = {
       title: titleInput.value.trim(),
       description: descriptionInput.value.trim(),
-      userId: assigneeSelect.value ? Number(assigneeSelect.value) : null,
+      userId: assigneeSelect.value ? String(assigneeSelect.value) : null,
       priority: prioritySelect.value,
       status: statusSelect.value,
       dueDate: dueInput.value || null,
@@ -93,11 +93,5 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("lastCreatedTaskId", String(createdTask.id));
 
     window.location.href = "new-task.html";
-  })
+  });
 });
-
-
-
-
-  
-  

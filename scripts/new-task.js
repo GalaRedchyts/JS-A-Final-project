@@ -66,16 +66,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const editBtn = document.querySelector(".edit");
 
     if (completeBtn) {
-      if (lastTask.status === "Done") {
+      if (lastTask.status === "done") {
         completeBtn.style.display = "none";
       } else {
         completeBtn.style.display = "inline-block";
         completeBtn.addEventListener("click", () => {
-          storage.updateTask(lastTask.id, { status: "Done" });
+          storage.updateTask(lastTask.id, { status: "done" });
 
           const statusEl = li.querySelector("[data-status]");
           if (statusEl) {
-            statusEl.textContent = "Done";
+            statusEl.textContent = "done";
           }
 
           completeBtn.style.display = "none";
