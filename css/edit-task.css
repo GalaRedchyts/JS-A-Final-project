@@ -216,15 +216,6 @@ button {
   transition: background-color 0.3s ease;
 }
 
-body.blurred .container {
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
-  -webkit-transition: -webkit-filter 0.3s ease;
-  transition: -webkit-filter 0.3s ease;
-  transition: filter 0.3s ease;
-  transition: filter 0.3s ease, -webkit-filter 0.3s ease;
-}
-
 .error-message {
   margin-top: 0.5rem;
   color: red;

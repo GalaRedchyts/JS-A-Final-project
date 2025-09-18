@@ -176,3 +176,8 @@
     }
     
 }
+
+body.blurred .container, body.blurred .nav{
+    filter: blur(5px);
+    transition: filter 0.3s ease;
+}

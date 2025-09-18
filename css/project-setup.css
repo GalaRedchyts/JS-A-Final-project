@@ -216,15 +216,6 @@ button {
   transition: background-color 0.3s ease;
 }
 
-body.blurred .container {
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
-  -webkit-transition: -webkit-filter 0.3s ease;
-  transition: -webkit-filter 0.3s ease;
-  transition: filter 0.3s ease;
-  transition: filter 0.3s ease, -webkit-filter 0.3s ease;
-}
-
 .error-message {
   margin-top: 0.5rem;
   color: red;
@@ -447,15 +438,6 @@ img {
 button {
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
-}
-
-body.blurred .container {
-  -webkit-filter: blur(5px);
-          filter: blur(5px);
-  -webkit-transition: -webkit-filter 0.3s ease;
-  transition: -webkit-filter 0.3s ease;
-  transition: filter 0.3s ease;
-  transition: filter 0.3s ease, -webkit-filter 0.3s ease;
 }
 
 .error-message {
@@ -847,4 +829,13 @@ textarea {
 [data-project-ready] .buttons .clear-all-data:hover {
   color: #F9FAFB;
   background-color: #EF4444;
+}
+
+body.blurred .content, body.blurred .nav {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+  -webkit-transition: -webkit-filter 0.3s ease;
+  transition: -webkit-filter 0.3s ease;
+  transition: filter 0.3s ease;
+  transition: filter 0.3s ease, -webkit-filter 0.3s ease;
 }

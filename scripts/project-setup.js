@@ -30,20 +30,24 @@ const closeBtn = modal.querySelector(".close-btn");
 
 function showModal(onConfirm) {
     modal.classList.add("active");
+    document.body.classList.add("blurred");
 
     const handleCancel = () => {
         modal.classList.remove("active");
+        document.body.classList.remove("blurred");
         cleanup();
     };
 
     const handleConfirm = () => {
         onConfirm();
         modal.classList.remove("active");
+        document.body.classList.remove("blurred");
         cleanup();
     };
 
     const handleClose = () => {
         modal.classList.remove("active");
+        document.body.classList.remove("blurred");
         cleanup();
     };
 
