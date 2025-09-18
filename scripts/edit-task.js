@@ -1,5 +1,6 @@
 import LocalStorageService from "./services/local-storage-service.js";
 import { renderCurrentUserAvatar } from "./services/current-user.js";
+import { validateTitle } from "./services/validation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
     const storage = new LocalStorageService();
@@ -55,9 +56,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+    const titleInput = document.getElementById("title");
+    const errorSmall = form.querySelector(".error-message");
+
+    titleInput.addEventListener("input", () => {
+        validateTitle(titleInput.value, errorSmall);
+    });
+
     form.addEventListener("submit", e => {
         e.preventDefault();
-
+   
         const updateTask = {
             ...task,
             title: document.querySelector("#title").value.trim(),
