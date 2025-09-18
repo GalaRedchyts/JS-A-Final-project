@@ -63,7 +63,7 @@ function generateProject(storage, generateSection, readySection) {
     storage.clearAll();
 
     const users = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 5; i++) {
         const user = storage.addUser({ 
             name: getRandomItem(userNames),
             avatar: getRandomItem(avatars),
@@ -73,7 +73,7 @@ function generateProject(storage, generateSection, readySection) {
         users.push(user);
     }
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 15; i++) {
         const randomUser = getRandomItem(users);
         storage.addTask({
             title: getRandomItem(taskTitles),
