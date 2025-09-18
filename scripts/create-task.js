@@ -1,5 +1,6 @@
 import LocalStorageService from "./services/local-storage-service.js";
 import { renderCurrentUserAvatar } from "./services/current-user.js";
+import { validateTitle } from "./services/validation.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const storage = new LocalStorageService();
@@ -55,23 +56,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderAssignees();
 
-  function validateTitle() {
-    const value = titleInput.value.trim();
-    if (value.length < 2) {
-      errorSmall.textContent = "Title must be at least 2 characters.";
-      errorSmall.style.display = "block";
-      return false;
-    }
-    if (value.length > 50) {
-      errorSmall.textContent = "Title must be less than 50 characters";
-      errorSmall.style.display = "block";
-      return false;
-    }
-    errorSmall.style.display = "none";
-    return true;
-  }
-
-  titleInput.addEventListener("input", validateTitle);
+  titleInput.addEventListener("input", () => {
+    validateTitle(titleInput.value, errorSmall);
+  });
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
