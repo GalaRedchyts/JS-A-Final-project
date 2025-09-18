@@ -56,14 +56,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   renderAssignees();
 
+  let isTitleValid = validateTitle(titleInput.value, errorSmall);
+
   titleInput.addEventListener("input", () => {
-    validateTitle(titleInput.value, errorSmall);
+     isTitleValid = validateTitle(titleInput.value, errorSmall); 
   });
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    if (!validateTitle()) {
+    if (!validateTitle(titleInput.value, errorSmall)) {
+      isTitleValid = false;
+    }
+
+    if (!isTitleValid) {
       return;
     }
 

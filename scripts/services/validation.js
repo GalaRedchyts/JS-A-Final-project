@@ -1,5 +1,10 @@
 export function validateTitle(title, errorElement) {
     const value = title.trim();
+
+    if (value.length === 0) {
+      hideError(errorElement);
+      return false;
+    }
   
     if (value.length < 2) {
       showError(errorElement, "Title must be at least 2 characters.");

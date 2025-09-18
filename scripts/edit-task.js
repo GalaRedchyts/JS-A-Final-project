@@ -59,13 +59,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const titleInput = document.getElementById("title");
     const errorSmall = form.querySelector(".error-message");
 
+    let isTitleValid = validateTitle(titleInput.value, errorSmall);
+
     titleInput.addEventListener("input", () => {
-        validateTitle(titleInput.value, errorSmall);
+       isTitleValid = validateTitle(titleInput.value, errorSmall);
     });
 
     form.addEventListener("submit", e => {
         e.preventDefault();
    
+        if (!validateTitle(titleInput.value, errorSmall)) {
+            isTitleValid = false;
+        }
+
+        if (!isTitleValid) {
+            return;
+        }
+
         const updateTask = {
             ...task,
             title: document.querySelector("#title").value.trim(),
