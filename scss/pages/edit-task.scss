@@ -9,6 +9,11 @@
             border: 1px solid #EF4444;
             color: #EF4444;
             background-color: #FFFFFF;
+
+            &:hover, &:active {
+                background-color: #EF4444;
+                color: #FFFF;
+            }
         }
     }
 }
