@@ -124,6 +124,10 @@ header .nav .item-nav:hover, header .nav .bottom-link:hover {
 header .nav .item-nav:hover .svg-icon, header .nav .bottom-link:hover .svg-icon {
   color: #4F46E5;
 }
+header .nav .item-nav a {
+  width: 100%;
+  height: 100%;
+}
 header .nav .item-nav.active, header .nav .bottom-link.active {
   background-color: #E0E7FF;
   color: #4F46E5;
